@@ -1,0 +1,20 @@
+.current-weather-display,
+.current-weather-forecast {
+  /* position: absolute; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.current-weather-display {
+  margin: 0 0 50px 200px;
+}
+
+.current-weather-forecast {
+  margin: 0 0 0 200px;
+}
+
+.current-weather-forecast span {
+  padding: 10px;
+}

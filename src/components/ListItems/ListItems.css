@@ -1,0 +1,11 @@
+.list-items {
+  /* position: relative; */
+  text-align: center;
+  margin-bottom: 100px;
+  border: 1px solid orange;
+  margin-left: 250px;
+}
+
+.list-items span {
+  padding: 10px;
+}

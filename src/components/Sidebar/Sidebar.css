@@ -1,0 +1,19 @@
+.sidebar {
+  position: absolute;
+  text-align: center;
+  border: 1px solid blue;
+  width: 200px;
+  height: 600px;
+  margin: 10px;
+}
+
+.sidebar p {
+  border: 1px solid red;
+  margin: 2px;
+}
+
+.sidebar-form {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+}
