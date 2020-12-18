@@ -1,18 +1,18 @@
 import React from 'react';
+import SidebarItems from '../SidebarItems/SidebarItems';
 import './Sidebar.css';
 
-function Sidebar() {
+function Sidebar( props ) {
+  
   return (
     <div className="sidebar">
-      <p>List 1</p>
-      <p>List 2</p>
-      <p>List 3</p>
+      
+      <SidebarItems lists={ props.lists }/>
 
       <div className="sidebar-form">
         <p>New List</p>
 
       </div>
-
     </div>
   );
 };

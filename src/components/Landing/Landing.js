@@ -8,10 +8,10 @@ function Landing() {
       <p>Find out the current weather forecast and plan your shoot correctly.</p>
       <form>
         <div className="container">
-          <label for="username"><b>Username</b></label>
+          <label htmlFor="username"><b>Username</b></label>
           <input type="text" placeholder="Enter Username" name="username" required />
       
-          <label for="password"><b>Password</b></label>
+          <label htmlFor="password"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required />
       
           <button type="submit">Login</button>

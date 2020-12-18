@@ -1,14 +1,20 @@
 import React from 'react';
 
-function Item() {
+function Item( props ) {
  return (
-  <>
-    <span>San Francisco</span>
-    <span>Fremont</span>
-    <span>Walnut Creek</span>
-    <span>Livermore</span>
-    <span>Castro Valley</span>
-  </>
+   <div className="city-item">
+     { props.cities.map( city =>
+      <p key={ city.name }>{ city.name }</p>  
+      )}
+     
+   </div>
+  // <>
+  //   <span>San Francisco</span>
+  //   <span>Fremont</span>
+  //   <span>Walnut Creek</span>
+  //   <span>Livermore</span>
+  //   <span>Castro Valley</span>
+  // </>
  );
 };
 

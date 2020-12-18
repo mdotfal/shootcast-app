@@ -1,4 +1,4 @@
-.list-items {
+.list {
   /* position: relative; */
   text-align: center;
   margin-bottom: 100px;
@@ -6,6 +6,6 @@
   margin-left: 250px;
 }
 
-.list-items span {
+.list span {
   padding: 10px;
 }
