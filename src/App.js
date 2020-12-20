@@ -60,23 +60,23 @@ class App extends Component {
     // console.log( 'App',this.state );
     return (
       <main className='App'>
-        <Route
-          exact 
-          path='/' 
-          render={ () =>
-            <Main 
-              cities={ cities } 
-              lists={ lists }
-              onDeleteList={ this.handleDeleteList }
-              onAddList={ this.handleAddList }
-              onDeleteCity={ this.handleDeleteCity }
-              onAddCity={ this.handleAddCity }
-            />
-          }/>
-        <Route path='/landing' component={ Landing }/> 
-        <Route path='/registration' component={ Registration }/> 
-        
-
+        <div className="container">
+          <Route path='/nav' component={ Nav }/>
+          <Route 
+            path='/' 
+            render={ () =>
+              <Main 
+                cities={ cities } 
+                lists={ lists }
+                onDeleteList={ this.handleDeleteList }
+                onAddList={ this.handleAddList }
+                onDeleteCity={ this.handleDeleteCity }
+                onAddCity={ this.handleAddCity }
+              />
+            }/>
+          <Route path='/landing' component={ Landing }/> 
+          <Route path='/registration' component={ Registration }/>
+        </div>
       </main>
     );
   };

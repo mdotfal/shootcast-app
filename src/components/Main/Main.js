@@ -11,9 +11,9 @@ class Main extends Component {
     // console.log( 'main cities',props.lists )
     return (
       
-      <div className="container">
+      <div>
 
-        <Route exact path='/nav' component={ Nav }/>
+        {/* <Route exact path='/nav' component={ Nav }/> */}
         {/* <Nav /> */}
         <Sidebar 
           lists={ this.props.lists }
