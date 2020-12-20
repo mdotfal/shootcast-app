@@ -1,7 +1,8 @@
 .list {
   text-align: center;
-  margin: 0 0 100px 250px;
+  margin: 0 0 50px 250px;
   border: 1px solid orange;
+  max-width: 75%;
 }
 
 .city-item {
@@ -15,17 +16,19 @@
 .city-item p {
   flex-direction: row;
   justify-content: center;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 button {
   margin-right: 10px;
+  width: 20px;
 }
 
 .list-cities {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  overflow: auto;
 }
 
 .list-cities ul {

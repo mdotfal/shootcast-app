@@ -1,6 +1,8 @@
 .current-weather-display,
 .current-weather-forecast {
-  /* position: absolute; */
+  display: flex;
+  /* flex-direction: column; */
+  position: absolute;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -8,13 +10,10 @@
 }
 
 .current-weather-display {
-  margin: 0 0 50px 200px;
+  flex-direction: row;
+  margin-left: 400px;
 }
 
 .current-weather-forecast {
-  margin: 0 0 0 200px;
-}
-
-.current-weather-forecast span {
-  padding: 10px;
+  margin: 50px 400px;
 }

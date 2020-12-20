@@ -9,13 +9,7 @@ function WeatherDisplay() {
       </div>
 
       <div className="current-weather-forecast">
-        <span>Sunday</span>
-        <span>Monday</span>
-        <span>Tuesday</span>
-        <span>Wednesday</span>
-        <span>Thursday</span>
-        <span>Friday</span>
-        <span>Saturday</span>
+        <span>Forecast</span>
       </div>
     </section>
   );
