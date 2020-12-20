@@ -1,0 +1,38 @@
+.list {
+  text-align: center;
+  margin: 0 0 100px 250px;
+  border: 1px solid orange;
+}
+
+.city-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.city-item p {
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.list-cities {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list-cities ul {
+  flex-direction: row;
+  color:red;
+}
+
+.addcity-form {
+  margin-bottom: 15px;
+}

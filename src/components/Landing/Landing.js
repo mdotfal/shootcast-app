@@ -7,7 +7,7 @@ function Landing() {
       <h1>Welcome to the ShootCast App</h1>
       <p>Find out the current weather forecast and plan your shoot correctly.</p>
       <form>
-        <div className="container">
+        <div className="landing-container">
           <label htmlFor="username"><b>Username</b></label>
           <input type="text" placeholder="Enter Username" name="username" required />
       

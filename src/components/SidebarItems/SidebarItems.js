@@ -1,11 +1,17 @@
 import React from 'react';
+// import AddList from '../AddList/AddList';
 
 function SidebarItems( props ) {
+  // console.log( 'sidebar items',props );
   return (
     <div className="sidebar-items">
-      { props.lists.map( list => 
-        <p key={ list.name }> { list.name } </p>
-      )}
+      <p> 
+        { props.list.name } 
+      </p>
+      <button
+        type="button"
+        onClick={ () => props.onDeleteList( props.list )}
+      >x</button>
     </div>
   )
 }

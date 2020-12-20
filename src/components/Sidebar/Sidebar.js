@@ -1,18 +1,22 @@
 import React from 'react';
+import AddList from '../AddList/AddList';
 import SidebarItems from '../SidebarItems/SidebarItems';
+
 import './Sidebar.css';
 
 function Sidebar( props ) {
   
   return (
     <div className="sidebar">
-      
-      <SidebarItems lists={ props.lists }/>
+      { props.lists.map( ( list, i ) => 
+        <SidebarItems
+          key={ i } 
+          list={ list } 
+          onDeleteList={ props.onDeleteList }
+        />
+      )}
 
-      <div className="sidebar-form">
-        <p>New List</p>
-
-      </div>
+    <AddList onAddList={ props.onAddList }/>
     </div>
   );
 };

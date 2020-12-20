@@ -2,42 +2,42 @@
 export default {
   "cities": [
     {
-      "id": "123456",
+      "id": "1",
       "name": "San Francisco"
     },
     {
-      "id": "123456",
+      "id": "2",
       "name": "Fremont"
     },
     {
-      "id": "123456",
+      "id": "3",
       "name": "Walnut Creek"
     },
     {
-      "id": "123456",
+      "id": "4",
       "name": "Livermore"
     },
     {
-      "id": "123456",
+      "id": "5",
       "name": "Castro Valley"
     },
   ],
   "lists": [
     {
-      "id": "123456",
+      "id": "1",
+      "name": "Custom List"
+    },
+    {
+      "id": "2",
       "name": "East Bay"
     },
     {
-      "id": "123456",
+      "id": "3",
       "name": "Peninsula"
     },
     {
-      "id": "123456",
+      "id": "4",
       "name": "South Bay"
-    },
-    {
-      "id": "123456",
-      "name": "Custom List"
     },
   ]
 }
