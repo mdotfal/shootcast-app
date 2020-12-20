@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AddList from '../AddList/AddList';
 import SidebarItems from '../SidebarItems/SidebarItems';
 
 import './Sidebar.css';
 
-function Sidebar( props ) {
+class Sidebar extends Component {
+  render() {
+    // console.log( 'sidebar',this.props)
+    
+    return (
+      <div className="sidebar">
+        { this.props.lists.map( ( list, i ) => 
+          <SidebarItems
+            key={ i } 
+            list={ list } 
+            onDeleteList={ this.props.onDeleteList }
+          />
+        )}
   
-  return (
-    <div className="sidebar">
-      { props.lists.map( ( list, i ) => 
-        <SidebarItems
-          key={ i } 
-          list={ list } 
-          onDeleteList={ props.onDeleteList }
-        />
-      )}
-
-    <AddList onAddList={ props.onAddList }/>
-    </div>
-  );
+      <AddList onAddList={ this.props.onAddList }/>
+      </div>
+    );
+  };
 };
 
 export default Sidebar;

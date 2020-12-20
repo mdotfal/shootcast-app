@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Item( props ) {
-  return (
-    <div className="item">
-        <div className="city-item">
-          <p>{ props.city.name }</p>  
-          <button
-            type="button"
-            onClick={ () => props.onDeleteCity( props.city ) }
-          >x</button>
-        </div>
-    </div>
-  );
+class Item extends Component {
+  render() {
+    // console.log( 'item', this.props )
+    return (
+      <div className="item">
+          <div className="city-item">
+            <p>{ this.props.city.name }</p>  
+            <button
+              type="button"
+              onClick={ () => this.props.onDeleteCity( this.props.city )}
+            >x</button>
+          </div>
+      </div>
+    );
+
+  }
 };
 
 export default Item;

@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import AddList from '../AddList/AddList';
 
-function SidebarItems( props ) {
-  // console.log( 'sidebar items',props );
-  return (
-    <div className="sidebar-items">
-      <p> 
-        { props.list.name } 
-      </p>
-      <button
-        type="button"
-        onClick={ () => props.onDeleteList( props.list )}
-      >x</button>
-    </div>
-  )
+class SidebarItems extends Component {
+  render() {
+    // console.log( 'sidebar items',props );
+    return (
+      <div className="sidebar-items">
+        <p> 
+          { this.props.list.name } 
+        </p>
+        <button
+          type="button"
+          onClick={ () => this.props.onDeleteList( this.props.list )}
+        >x</button>
+      </div>
+    )
+  };
 }
 
 export default SidebarItems;

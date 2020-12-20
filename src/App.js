@@ -10,6 +10,7 @@ import WeatherDisplay from './components/WeatherDisplay/WeatherDisplay'
 import store from './store';
 import './components/Main/Main.css';
 
+
 class App extends Component {
 
   state = {
@@ -61,21 +62,40 @@ class App extends Component {
     return (
       <main className='App'>
         <div className="container">
-          <Route path='/nav' component={ Nav }/>
-          <Route 
-            path='/' 
-            render={ () =>
-              <Main 
-                cities={ cities } 
-                lists={ lists }
-                onDeleteList={ this.handleDeleteList }
-                onAddList={ this.handleAddList }
-                onDeleteCity={ this.handleDeleteCity }
-                onAddCity={ this.handleAddCity }
-              />
-            }/>
-          <Route path='/landing' component={ Landing }/> 
-          <Route path='/registration' component={ Registration }/>
+        <Route path='/' component={ Nav }/>
+        <Route 
+          path='/' 
+          render={ () =>
+            <Main 
+            cities={ cities } 
+            lists={ lists }
+            onDeleteList={ this.handleDeleteList }
+            onAddList={ this.handleAddList }
+            onDeleteCity={ this.handleDeleteCity }
+            onAddCity={ this.handleAddCity }
+            />
+          }/>
+        <Route path='/' render={ () =>
+          <Sidebar 
+            lists={ lists }
+            onAddList={ this.handleAddList }
+            onDeleteList={ this.handleDeleteList }
+          />
+        } />
+        <Route path='/' render={ () => 
+          <ListPage
+            lists={ lists }
+            cities={ cities }
+            onAddCity={ this.handleAddCity } 
+            onDeleteCity={ this.handleDeleteCity }
+            />
+
+        } />
+
+        <Route path='/' component={ WeatherDisplay }/>
+        
+        <Route path='/landing' component={ Landing }/> 
+        <Route path='/registration' component={ Registration }/>
         </div>
       </main>
     );

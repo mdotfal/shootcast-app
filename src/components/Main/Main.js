@@ -11,24 +11,25 @@ class Main extends Component {
     // console.log( 'main cities',props.lists )
     return (
       
-      <div>
-
-        {/* <Route exact path='/nav' component={ Nav }/> */}
-        {/* <Nav /> */}
-        <Sidebar 
+      <>
+        
+        {/* <Route path='/' render={ () =>
+          <Sidebar 
           lists={ this.props.lists }
           onAddList={ this.props.onAddList }
           onDeleteList={ this.props.onDeleteList }
           />
-        <ListPage
-          lists={ this.props.lists }
-          cities={ this.props.cities }
-          onAddCity={ this.props.onAddCity } 
-          onDeleteCity={ this.props.onDeleteCity }
-        />
-        <WeatherDisplay />
-  
-      </div>
+        } /> */}
+        {/* <Route path='/list/:listId' render={ () => 
+          <ListPage
+            lists={ this.props.lists }
+            cities={ this.props.cities }
+            onAddCity={ this.props.onAddCity } 
+            onDeleteCity={ this.props.onDeleteCity }
+            />
+        } /> */}
+        
+      </>
     );
   }
    
