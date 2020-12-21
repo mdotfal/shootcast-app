@@ -1,6 +1,6 @@
 .list {
   text-align: center;
-  margin: 0 0 50px 250px;
+  margin: 0 50px;
   border: 1px solid orange;
   max-width: 75%;
 }
@@ -17,6 +17,7 @@
   flex-direction: row;
   justify-content: center;
   padding: 10px 0;
+  margin: 0;
 }
 
 button {

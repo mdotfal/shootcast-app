@@ -18,7 +18,7 @@ class Sidebar extends Component {
           />
         )}
   
-      <AddList onAddList={ this.props.onAddList }/>
+        <AddList onAddList={ this.props.onAddList }/>
       </div>
     );
   };

@@ -1,9 +1,9 @@
 .sidebar {
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   border: 1px solid blue;
-  width: 200px;
-  height: 600px;
+  /* width: 200px; */
+  /* height: 600px; */
   margin: 10px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .sidebar-form {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100px;
 }
@@ -22,5 +22,5 @@
 .sidebar-items {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }

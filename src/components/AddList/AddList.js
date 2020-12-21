@@ -9,7 +9,6 @@ class AddList extends Component {
   }
 
   render() {
-    // console.log('addlist', this.props )
     return (
       <div className="addlist">
         <form className="addlist-form" onSubmit={ this.onSubmit }>
