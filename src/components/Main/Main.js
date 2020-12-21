@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import Nav from '../Nav/Nav';
-import Sidebar from '../Sidebar/Sidebar';
-import ListPage from '../ListPage/ListPage';
-import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
+// import { Route } from 'react-router-dom';
+// import Nav from '../Nav/Nav';
+// import Sidebar from '../Sidebar/Sidebar';
+// import ListPage from '../ListPage/ListPage';
+// import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './Main.css';
 
 class Main extends Component {
