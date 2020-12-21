@@ -14,10 +14,9 @@ function Landing() {
           <label htmlFor="password"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" required />
       
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" /> Remember me
-          </label>
+          <button 
+            type="button"
+          >Login</button>
         </div>
       </form>
       or
