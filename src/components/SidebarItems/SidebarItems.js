@@ -10,6 +10,7 @@ class SidebarItems extends Component {
           { this.props.list.name } 
         </p>
         <button
+          className="btn"
           type="button"
           onClick={ () => this.props.onDeleteList( this.props.list )}
         >x</button>

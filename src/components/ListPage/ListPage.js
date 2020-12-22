@@ -6,11 +6,11 @@ import './ListPage.css';
 class ListPage extends Component {
   render() {
     return (
-      <div className="list">
+      <div className="list ">
         <h2>Custom List</h2>
         <div className="list-cities">
           { this.props.cities.map( ( city, i ) =>
-            <div key={ city }>
+            <div key={ i }>
               <Item
                 key={ i }
                 city={ city }

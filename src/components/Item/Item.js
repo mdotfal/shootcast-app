@@ -7,6 +7,7 @@ class Item extends Component {
           <div className="city-item">
             <p>{ this.props.city.name }</p>  
             <button
+              className="btn"
               type="button"
               onClick={ () => this.props.onDeleteCity( this.props.city )}
             >x</button>

@@ -9,8 +9,17 @@ body {
 
 input[ type=text ],
 input[ type=password ],
+button,
 button[ type=submit ] {
   width: 100px;
+}
+
+button[ type=submit ] {
+  margin-top: 2px;
+}
+
+button {
+  margin: 0;
 }
 
 .landing-container {

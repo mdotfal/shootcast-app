@@ -64,6 +64,7 @@ class Landing extends Component {
           </div>
         </form>
         or
+        <br />
         <Link to="/registration">
           <button>Register</button>
         </Link>
