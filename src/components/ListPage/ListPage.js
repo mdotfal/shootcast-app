@@ -10,7 +10,7 @@ class ListPage extends Component {
         <h2>Custom List</h2>
         <div className="list-cities">
           { this.props.cities.map( ( city, i ) =>
-            <div key={ city.id }>
+            <div key={ city }>
               <Item
                 key={ i }
                 city={ city }

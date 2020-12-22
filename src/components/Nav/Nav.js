@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import './Nav.css';
 
 function Nav() {
+
+  const signOut = () => {
+    window.location.reload( false );
+  } 
+
   return (
     <div className="nav">
-      <Link to={ '/' }>
+      <Link to='/home'>
         Home  
       </Link>
-      <Link to={ '/landing' }>
-        Sign Out
-      </Link>
+        <p onClick={ signOut }>Sign Out</p>
     </div>
   );
 };
