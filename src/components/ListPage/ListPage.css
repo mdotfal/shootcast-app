@@ -34,10 +34,7 @@ button {
 
 .list-cities {
   display: flex;
-
-  /* flex-direction: column; */
   justify-content: space-evenly;
-  /* overflow: auto; */
 }
 
 .list-cities ul {

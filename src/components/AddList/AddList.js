@@ -16,7 +16,7 @@ class AddList extends Component {
           <input type="text" placeholder="Enter List Name" name="inputList" id="inputList" required />
           <button
             type="submit" 
-          >+</button>
+          >Add List</button>
         </form>
       </div>
     );

@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Landing from './components/Landing/Landing';
 import Registration from './components/Registration/Registration';
 import store from './store';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
 const users = [
@@ -39,10 +40,13 @@ class App extends Component {
     })
   }
   
-  handleAddList = ( listName ) => {
+  handleAddList = ( listName, id ) => {
     const newList = [
       ...this.state.lists,
-      { name: listName },
+      { 
+        name: listName,
+        id: uuidv4(), 
+      },
     ];
     this.setState({
       lists: newList
