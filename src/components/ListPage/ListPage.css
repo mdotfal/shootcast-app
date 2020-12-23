@@ -3,7 +3,7 @@
   text-align: center;
   margin: 0 50px;
   border: 1px solid orange;
-  max-width: 75%;
+  
 }
 
 .city-item {
@@ -34,9 +34,10 @@ button {
 
 .list-cities {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: auto;
+
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  /* overflow: auto; */
 }
 
 .list-cities ul {

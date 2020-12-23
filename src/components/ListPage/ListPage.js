@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import AddCity from '../AddCity/AddCity';
 import Item from '../Item/Item';
+import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './ListPage.css';
 
 class ListPage extends Component {
   render() {
     return (
       <div className="list">
+        <AddCity 
+          onAddCity={ this.props.onAddCity }
+          lists={ this.props.lists }
+        />
+        <p>{ this.props.lists.name }</p>
         <div className="list-cities">
           <ul>
             { this.props.cities.map( (city , i ) =>
@@ -19,12 +25,10 @@ class ListPage extends Component {
               </li>
               )}
           </ul>
+          <WeatherDisplay />
         </div>
   
-        <AddCity 
-          onAddCity={ this.props.onAddCity }
-          lists={ this.props.lists }
-        />
+        
      </div>
     );
   }

@@ -3,7 +3,7 @@ import './WeatherDisplay.css';
 
 function WeatherDisplay() {
   return (
-    <section>
+    <div className='weather-display'>
       <div className="current-weather-display">
         <p>Sunny</p>
       </div>
@@ -11,7 +11,7 @@ function WeatherDisplay() {
       <div className="current-weather-forecast">
         <span>Forecast</span>
       </div>
-    </section>
+    </div>
   );
 }
 

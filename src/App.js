@@ -4,7 +4,7 @@ import Home from './components/Home/Home';
 import Landing from './components/Landing/Landing';
 import Registration from './components/Registration/Registration';
 import store from './store';
-import './components/Main/Main.css';
+import './App.css';
 
 const users = [
   { 
