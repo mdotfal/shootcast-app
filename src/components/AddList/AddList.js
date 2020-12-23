@@ -5,8 +5,9 @@ class AddList extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.onAddList( e.target.inputList.value )
+    this.props.onAddList( e.target.inputList.value );
   }
+
 
   render() {
     return (

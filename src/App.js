@@ -20,6 +20,8 @@ const users = [
   },
 ];
 
+
+
 class App extends Component {
 
   state = {
@@ -27,7 +29,9 @@ class App extends Component {
     lists: [],
     authedUser: true,
     users,
+    response: {},
   };
+  
 
   componentDidMount = () => {
     this.setState( store );
@@ -40,7 +44,7 @@ class App extends Component {
     })
   }
   
-  handleAddList = ( listName, id ) => {
+  handleAddList = ( listName ) => {
     const newList = [
       ...this.state.lists,
       { 
@@ -108,7 +112,7 @@ class App extends Component {
   render() {
 
     const { cities, lists, authedUser } = this.state;
-    // console.log( 'App',this.state );
+    // console.log( 'App',this.response );
     return (
       <main className='App'>
 
@@ -122,6 +126,7 @@ class App extends Component {
                   <Home 
                     lists={ lists }
                     cities={ cities }
+                    response={ this.state.response }
                     onAddList={ this.handleAddList }
                     onDeleteList={ this.handleDeleteList }
                     onAddCity={ this.handleAddCity } 

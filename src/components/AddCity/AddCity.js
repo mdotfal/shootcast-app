@@ -8,7 +8,6 @@ class AddCity extends Component {
   }
 
   render() {
-    console.log('listpage', this.props.lists )
     return (
       <div className="addcity">
         

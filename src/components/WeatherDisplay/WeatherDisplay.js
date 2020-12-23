@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './WeatherDisplay.css';
 
-function WeatherDisplay() {
-  return (
-    <div className='weather-display'>
-      <div className="current-weather-display">
-        <p>Sunny</p>
-      </div>
+class WeatherDisplay extends Component {
 
-      <div className="current-weather-forecast">
-        <span>Forecast</span>
+  state = {
+    data : {}
+  }
+
+  componentDidMount() {
+    // this.setState({
+    //   data: this.props.data
+    // })
+  }
+
+  render() {
+    console.log( 'wd', this.state )
+    return (
+      <div className='weather-display'>
+        <div className="current-weather-display">
+          {/* <p>{ this.state.data.name }</p> */}
+        </div>
+  
+        <div className="current-weather-forecast">
+          {/* <p>{ this.state.data.weather[0].name }</p> */}
+          <p>{ }</p>
+          <p>{ }</p>
+          <p>{ }</p>
+          <p>{ }</p>
+          <p>{ }</p>
+          <p>{ }</p>
+          <p>{ }</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default WeatherDisplay;
