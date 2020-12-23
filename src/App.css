@@ -11,6 +11,6 @@ body {
 .container {
   display: block;
   border: 1px solid black;
-  height: 800px;
-  max-width: 90%;
+  max-height: 100vh;
+  max-width: 100vw;
 }

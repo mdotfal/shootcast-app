@@ -41,6 +41,7 @@ button {
 
 .list-cities ul {
   flex-direction: row;
+  list-style-type: none;
   color:red;
 }
 

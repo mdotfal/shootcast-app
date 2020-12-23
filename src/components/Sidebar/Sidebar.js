@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import AddList from '../AddList/AddList';
-import SidebarItems from '../SidebarItems/SidebarItems';
 
 import './Sidebar.css';
 
 class Sidebar extends Component {
+
   render() {
-    // console.log( 'sidebar',this.props)
     
     return (
       <div className="sidebar">
-        { this.props.lists.map( ( list, i ) => 
-          <SidebarItems
-            key={ i } 
-            list={ list } 
-            onDeleteList={ this.props.onDeleteList }
-          />
-        )}
-  
-        <AddList onAddList={ this.props.onAddList }/>
+        <h3>Add a custom list or click to display cities.</h3>
+        <ul>
+          { this.props.lists.map( ( list, i ) => 
+            <li key={ i }>
+              <NavLink to={ `/lists/${ list.id }` }> 
+              { list.name }
+              </NavLink>
+                <button
+                className="btn"
+                type="button"
+                onClick={ () => this.props.onDeleteList( list )}
+              >x</button>
+            </li>
+          )}
+        </ul>
+      <AddList onAddList={ this.props.onAddList }/>
       </div>
     );
   };

@@ -24,8 +24,8 @@ class App extends Component {
   state = {
     cities: [],
     lists: [],
-    authedUser: false,
-    users
+    authedUser: true,
+    users,
   };
 
   componentDidMount = () => {
@@ -35,14 +35,14 @@ class App extends Component {
   handleDeleteList = list => {
     const newList = this.state.lists.filter( itm => itm !== list );
     this.setState({
-      lists: newList
+      lists: newList,
     })
   }
   
   handleAddList = ( listName ) => {
     const newList = [
       ...this.state.lists,
-      { name: listName }
+      { name: listName },
     ];
     this.setState({
       lists: newList
@@ -52,17 +52,20 @@ class App extends Component {
   handleDeleteCity = city => {
     const newCities = this.state.cities.filter( itm => itm !== city );
     this.setState({
-      cities: newCities
+      cities: newCities,
     })
   }
 
-  handleAddCity = ( cityName ) => {
+  handleAddCity = ( cityName, listId ) => {
     const newCity = [
       ...this.state.cities,
-      { name: cityName }
+      { 
+        name: cityName,
+        listId,
+      }
     ];
     this.setState({
-      cities: newCity
+      cities: newCity,
     })
   }
 
@@ -70,11 +73,17 @@ class App extends Component {
     const user = this.state.users.find( item => item.username.toLowerCase() === username.toLowerCase() );
     if( user && user.password === password ) {
       this.setState({
-        authedUser: user
+        authedUser: user,
       })
       return true;
     }
     return false;
+  }
+
+  handleSignOut = () => {
+    this.setState({
+      authedUser: false,
+    })
   }
 
   handleRegistration = ( username, password ) => {
@@ -84,10 +93,10 @@ class App extends Component {
     };
     const newUsers = [
       ...this.state.users,
-      { username, password }
+      { username, password },
     ];
     this.setState({
-      users: newUsers
+      users: newUsers,
     })
     return true;
   }
@@ -100,10 +109,11 @@ class App extends Component {
       <main className='App'>
 
         <div className="container">
+          
           <Switch>
             <Route 
-              path='/home' 
-              render={ () => (
+              path={ [ '/home', '/lists/:listId' ] } 
+              render={ routeProps => (
                 authedUser ? 
                   <Home 
                     lists={ lists }
@@ -112,10 +122,12 @@ class App extends Component {
                     onDeleteList={ this.handleDeleteList }
                     onAddCity={ this.handleAddCity } 
                     onDeleteCity={ this.handleDeleteCity }
-
+                    onSignOut={ this.handleSignOut }
+                    { ...routeProps }
                   />
                 : <Redirect to='/' />
               )}/>
+            
             <Route 
               path='/registration' 
               render={ () => (

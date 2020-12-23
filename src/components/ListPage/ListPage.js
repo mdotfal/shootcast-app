@@ -6,22 +6,25 @@ import './ListPage.css';
 class ListPage extends Component {
   render() {
     return (
-      <div className="list ">
-        <h2>Custom List</h2>
+      <div className="list">
         <div className="list-cities">
-          { this.props.cities.map( ( city, i ) =>
-            <div key={ i }>
-              <Item
-                key={ i }
-                city={ city }
-                onDeleteCity={ this.props.onDeleteCity }
-              />
-            </div>
-            )}
+          <ul>
+            { this.props.cities.map( (city , i ) =>
+              <li key={ i }>
+                <Item
+                  id={ city.id }
+                  city={ city }
+                  onDeleteCity={ this.props.onDeleteCity }
+                />
+              </li>
+              )}
+          </ul>
         </div>
   
-        <AddCity onAddCity={ this.props.onAddCity }/>
-  
+        <AddCity 
+          onAddCity={ this.props.onAddCity }
+          lists={ this.props.lists }
+        />
      </div>
     );
   }
