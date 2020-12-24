@@ -19,7 +19,7 @@ class WeatherDisplay extends Component {
         <div className="current-weather-description">
           { this.props.reading.weather[0].description }
         </div>
-        <h2>{ Math.round( this.props.reading.main.temp )} °F</h2>
+        <h2>{ Math.round( this.props.reading.main.temp )}°F</h2>
         <div className="current-weather-max">
             High-{ this.props.reading.main.temp_max } |  
             Low-{ this.props.reading.main.temp_min }
