@@ -1,36 +1,30 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import './WeatherDisplay.css';
 
 class WeatherDisplay extends Component {
 
-  state = {
-    data : {}
-  }
-
-  componentDidMount() {
-    // this.setState({
-    //   data: this.props.data
-    // })
-  }
-
   render() {
-    console.log( 'wd', this.state )
+
+    const newDate = new Date();
+    const weekDay = this.props.reading.dt * 1000
+    newDate.setTime( weekDay );
+
+    // console.log( 'wd-state', this.props )
     return (
       <div className='weather-display'>
         <div className="current-weather-display">
-          {/* <p>{ this.state.data.name }</p> */}
+          { moment( newDate ).format( 'dddd' )}
         </div>
-  
-        <div className="current-weather-forecast">
-          {/* <p>{ this.state.data.weather[0].name }</p> */}
-          <p>{ }</p>
-          <p>{ }</p>
-          <p>{ }</p>
-          <p>{ }</p>
-          <p>{ }</p>
-          <p>{ }</p>
-          <p>{ }</p>
+        <div className="current-weather-description">
+          { this.props.reading.weather[0].description }
         </div>
+        <h2>{ Math.round( this.props.reading.main.temp )} °F</h2>
+        <div className="current-weather-max">
+            High-{ this.props.reading.main.temp_max } |  
+            Low-{ this.props.reading.main.temp_min }
+        </div>
+        
       </div>
     );
   }

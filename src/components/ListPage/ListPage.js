@@ -12,23 +12,35 @@ class ListPage extends Component {
   }
   
   // componentDidMount() {
-  //   const city = 'San Francisco'
-  //   const api_key = 'c981e672df25eb5c03349c2335d240dd';
-  //   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ city }&appid=${ api_key }`)
-  //     .then( res => {
-  //       if( res.ok ) return res.json();
-  //     })
-  //     .then( data => {
-  //       this.setState({ 
-  //         data
-  //       })
-  //     })
-  //     .catch( err => err.message );
-
+  //   this.getWeather();
   // }
 
+  componentDidMount = () => {
+    const city = 'San Francisco'
+    const base = `http://api.openweathermap.org/data/2.5/forecast?q=`
+    const api_key = 'c981e672df25eb5c03349c2335d240dd';
+    const imperial = `&units=imperial`
+    const url = `${ base }${ city }&appid=${ api_key }${ imperial }`;
+    fetch( url )
+      .then( res => {
+        if( res.ok ) return res.json();
+      })
+      .then( data => {
+        const weather = data.list.filter( reading => reading.dt_txt.includes("18:00:00") )
+        this.setState({
+          data: weather
+        })
+      })
+      .catch( err => err.message );
+  }
+
+  formatForecast = () => {
+    return this.state.data.map( ( reading, index ) => 
+      <WeatherDisplay reading={ reading } key={ index }/> )
+  }
+
   render() {
-    // console.log('listpage', this.state.data )
+    console.log('listpage-statedata', this.state.data )
     return (
       <div className="list">
         <AddCity 
@@ -36,9 +48,9 @@ class ListPage extends Component {
           lists={ this.props.lists }
         />
         <br />
-        <p>Click a city to view Weather</p>
         <div className="list-cities">
           <ul>
+            <p>Click a city to view Weather</p>
             { this.props.cities.map( (city , i ) =>
               <li key={ i }>
                 <Item
@@ -49,12 +61,11 @@ class ListPage extends Component {
               </li>
               )}
           </ul>
-          <WeatherDisplay 
-            // data={ this.state.data }
-          />
+          <div className="list-forecast">
+            {/*  This is Weather Display */}
+            { this.formatForecast() }
+          </div>
         </div>
-  
-        
      </div>
     );
   }

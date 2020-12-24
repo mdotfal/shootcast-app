@@ -9,11 +9,6 @@
   padding: 10px;
 }
 
-.current-weather-display {
-  flex-direction: row;
-  /* margin-left: 400px; */
-}
-
 .current-weather-forecast span {
   padding: 5px;
 }

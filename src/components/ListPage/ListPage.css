@@ -40,9 +40,20 @@ button {
 .list-cities ul {
   flex-direction: row;
   list-style-type: none;
-  color:red;
+  color:black;
+  width: 225px;
+}
+
+.list-forecast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .addcity-form {
   margin-bottom: 15px;
+}
+
+.weather-display {
+  padding: 5px;
 }
