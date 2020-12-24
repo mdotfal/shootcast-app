@@ -12,7 +12,7 @@ class ListPage extends Component {
   }
 
   componentDidMount = () => {
-    const city = 'San Ramon'
+    const city = "San Bruno";
     const baseForecast = `http://api.openweathermap.org/data/2.5/forecast?q=`;
     const baseWeather = `http://api.openweathermap.org/data/2.5/weather?q=`
     const api_key = 'c981e672df25eb5c03349c2335d240dd';
@@ -48,12 +48,12 @@ class ListPage extends Component {
       <WeatherDisplay reading={ reading } key={ i } /> )
   }
 
-  // getNameOnClick = e => {
-  //   console.log( 'getNameOnClick clicked', this )
-    // this.setState({
-    //   city: this.props.city.name
-    // })
-  // }
+  getNameOnClick = cityName => {
+    console.log( 'getNameOnClick clicked', this.state.city )
+    this.setState({
+      city: cityName,
+    })
+  }
 
   render() {
     // console.log('listpage-statedata', this.state )
@@ -75,7 +75,7 @@ class ListPage extends Component {
                   id={ city.id }
                   value={ city.name }
                   city={ city }
-                  // getNameOnClick={ this.getNameOnClick }
+                  getNameOnClick={ this.getNameOnClick }
                   onDeleteCity={ this.props.onDeleteCity }
                 />
               </li>

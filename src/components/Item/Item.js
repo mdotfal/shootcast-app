@@ -6,20 +6,21 @@ class Item extends Component {
     city: "",
   }
 
-  getNameOnClick = e => {
-    console.log( 'getNameOnClick clicked', this.props.city.name )
+  onClick = e => {
+    // console.log( 'onClick clicked', this.props.city.name )
+    this.props.getNameOnClick( this.props.city.name );
     this.setState({
       city: this.props.city.name
     })
   }
 
   render() {
-    // console.log( 'Item-this.state',this.state )
+    // console.log( 'Item-this.state', this.state )
     return (
       <div className="item">
           <div 
             className="city-item"
-            onClick={ e => this.getNameOnClick( e ) }>
+            onClick={ e => this.onClick( e ) }>
               
              { this.props.city.name }
 
