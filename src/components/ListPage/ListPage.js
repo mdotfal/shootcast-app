@@ -48,12 +48,12 @@ class ListPage extends Component {
       <WeatherDisplay reading={ reading } key={ i } /> )
   }
 
-  getNameOnClick = e => {
-    console.log( 'getNameOnClick clicked' )
+  // getNameOnClick = e => {
+  //   console.log( 'getNameOnClick clicked', this )
     // this.setState({
-    //   city: this.props.cities.name
+    //   city: this.props.city.name
     // })
-  }
+  // }
 
   render() {
     // console.log('listpage-statedata', this.state )
@@ -75,7 +75,7 @@ class ListPage extends Component {
                   id={ city.id }
                   value={ city.name }
                   city={ city }
-                  getNameOnClick={ this.getNameOnClick }
+                  // getNameOnClick={ this.getNameOnClick }
                   onDeleteCity={ this.props.onDeleteCity }
                 />
               </li>
