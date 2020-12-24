@@ -30,7 +30,6 @@ class Landing extends Component {
         isError: true
       })
     }
-
   }
 
   render() {

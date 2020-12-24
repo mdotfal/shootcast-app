@@ -8,6 +8,7 @@ class ListPage extends Component {
   state = {
     forecastData: [],
     weatherData: [],
+    city: "",
   }
 
   componentDidMount = () => {
@@ -43,8 +44,15 @@ class ListPage extends Component {
   }
 
   formatForecast = () => {
-    return this.state.forecastData.map( ( reading, index ) => 
-      <WeatherDisplay reading={ reading } key={ index } /> )
+    return this.state.forecastData.map( ( reading, i ) => 
+      <WeatherDisplay reading={ reading } key={ i } /> )
+  }
+
+  getNameOnClick = e => {
+    console.log( 'getNameOnClick clicked' )
+    // this.setState({
+    //   city: this.props.cities.name
+    // })
   }
 
   render() {
@@ -60,10 +68,14 @@ class ListPage extends Component {
           <ul>
             <p>Click a city to view Weather</p>
             { this.props.cities.map( (city , i ) =>
-              <li key={ i }>
+              <li 
+                key={ i }
+                >
                 <Item
                   id={ city.id }
+                  value={ city.name }
                   city={ city }
+                  getNameOnClick={ this.getNameOnClick }
                   onDeleteCity={ this.props.onDeleteCity }
                 />
               </li>

@@ -14,7 +14,7 @@
 
 }
 
-.city-item p {
+.list-cities li {
   flex-direction: row;
   justify-content: center;
   padding: 10px 0;
@@ -29,6 +29,8 @@ button {
 }
 
 .btn {
+  border-radius: 40%;
+  margin-left: 5px;
   width: 20px;
 }
 

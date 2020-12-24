@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
 class Item extends Component {
+
   render() {
     return (
       <div className="item">
-          <div className="city-item">
-            <p>{ this.props.city.name }</p>  
+          <div 
+            className="city-item"
+            onClick={ e => this.props.getNameOnClick( e.target.value ) }>
+              
+             { this.props.city.name }
+              
             <button
               className="btn"
               type="button"
