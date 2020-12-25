@@ -10,7 +10,7 @@ class Sidebar extends Component {
     
     return (
       <div className="sidebar">
-        <h3>Add a custom list or click to display cities.</h3>
+        <h3>Click to display cities or add a custom list.</h3>
         <ul>
           { this.props.lists.map( ( list, i ) => 
             <li key={ i }>

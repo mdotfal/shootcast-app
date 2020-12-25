@@ -4,6 +4,7 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather';
 import Item from '../Item/Item';
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './ListPage.css';
+import config from '../../config';
 class ListPage extends Component {
   
   state = {
@@ -13,19 +14,16 @@ class ListPage extends Component {
   }
 
   componentDidUpdate = ( prevProps, prevState ) => {
-    console.log( 'cdu ran')
-    // console.log( 'componentDidUpdate', 'prevState', prevState )
     if( prevState.city !== this.state.city ) {
        this.fetchWeather( this.state.city );
     }
   }
 
   fetchWeather = () => {
-    console.log( 'fetchWeather ran' )
     const city = !undefined ? this.state.city : "San Bruno";
     const baseForecast = `http://api.openweathermap.org/data/2.5/forecast?q=`;
     const baseWeather = `http://api.openweathermap.org/data/2.5/weather?q=`
-    const api_key = '9e87c427393cb8c3e29a65c2b58db7a3';
+    const api_key = `${ config.API_KEY }`;
     const imperial = `&units=imperial`
     const forecastUrl = `${ baseForecast }${ city }&appid=${ api_key }${ imperial }`;
     const weatherUrl = `${ baseWeather }${ city }&appid=${ api_key }${ imperial }`;
@@ -45,7 +43,6 @@ class ListPage extends Component {
     })
     .then( ([ forecastData, weatherData ]) => {
       const forecast = forecastData.list.filter( fData => fData.dt_txt.includes("18:00:00") );
-      
       this.setState({
         forecastData: forecast,
         weatherData,
@@ -92,7 +89,9 @@ class ListPage extends Component {
           <div className="list-forecast">
             {/*  This is Weather Display */}
             <div className="city-name">
-              <CurrentWeather wData={ this.state.weatherData } />
+              <CurrentWeather 
+                wData={ this.state.weatherData } 
+              />
             </div>
             <div className="forecast-items">
               
