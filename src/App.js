@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Landing from './components/Landing/Landing';
 import Registration from './components/Registration/Registration';
@@ -110,38 +110,40 @@ class App extends Component {
     return (
       <main className='App'>
         <div className="container">
-          <Switch>
-            <Route 
-              path={ [ '/home', '/lists/:listId' ] } 
-              render={ routeProps => (
-                authedUser 
-                  ? <Home 
-                      lists={ lists }
-                      cities={ cities }
-                      response={ this.state.response }
-                      onAddList={ this.handleAddList }
-                      onDeleteList={ this.handleDeleteList }
-                      onAddCity={ this.handleAddCity } 
-                      onDeleteCity={ this.handleDeleteCity }
-                      onSignOut={ this.handleSignOut }
-                      { ...routeProps }
-                    />
-                  : <Redirect to='/' />
-            )}/>
-            <Route 
-              path='/registration' 
-              render={ () => (
-                <Registration
-                  handleRegistration={ this.handleRegistration }
+          <BrowserRouter>
+            <Switch>
+              <Route 
+                path={ [ '/home', '/lists/:listId' ] } 
+                render={ routeProps => (
+                  authedUser 
+                    ? <Home 
+                        lists={ lists }
+                        cities={ cities }
+                        response={ this.state.response }
+                        onAddList={ this.handleAddList }
+                        onDeleteList={ this.handleDeleteList }
+                        onAddCity={ this.handleAddCity } 
+                        onDeleteCity={ this.handleDeleteCity }
+                        onSignOut={ this.handleSignOut }
+                        { ...routeProps }
+                      />
+                    : <Redirect to='/' />
+              )}/>
+              <Route 
+                path='/registration' 
+                render={ () => (
+                  <Registration
+                    handleRegistration={ this.handleRegistration }
+                  />
+              )}/>
+              <Route render={ () => (
+                <Landing 
+                  handleLogin={ this.handleLogin }
+                  authedUser={ authedUser }
                 />
-            )}/>
-            <Route render={ () => (
-              <Landing 
-                handleLogin={ this.handleLogin }
-                authedUser={ authedUser }
-              />
-            )}/>
-          </Switch>
+              )}/>
+            </Switch>
+          </BrowserRouter>
         </div>
       </main>
     );
