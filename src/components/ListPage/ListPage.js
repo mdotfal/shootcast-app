@@ -44,7 +44,7 @@ class ListPage extends Component {
       return Promise.all([ forecastRes.json(), weatherRes.json() ]);
     })
     .then( ([ forecastData, weatherData ]) => {
-      const forecast = forecastData.list.filter( reading => reading.dt_txt.includes("18:00:00") );
+      const forecast = forecastData.list.filter( fData => fData.dt_txt.includes("18:00:00") );
       
       this.setState({
         forecastData: forecast,
