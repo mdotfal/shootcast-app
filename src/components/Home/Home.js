@@ -7,8 +7,6 @@ import ListPage from '../ListPage/ListPage';
 class Home extends Component {
 
   render() {
-    // console.log( 'home',this.props.response )
-
     const { listId } = this.props.match.params
     const cities = !listId ? this.props.cities : this.props.cities.filter( item => item.listId === listId );
 
@@ -21,11 +19,9 @@ class Home extends Component {
         <ListPage 
           cities={ cities }
           lists={ this.props.lists }
-          
           onDeleteCity={ this.props.onDeleteCity }
           onAddCity={ this.props.onAddCity } 
         />
-        
       </>
     );
   }

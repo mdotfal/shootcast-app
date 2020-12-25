@@ -19,9 +19,6 @@ const users = [
     password: 'pass123'
   },
 ];
-
-
-
 class App extends Component {
 
   state = {
@@ -32,7 +29,6 @@ class App extends Component {
     response: {},
   };
   
-
   componentDidMount = () => {
     this.setState( store );
   }
@@ -110,40 +106,35 @@ class App extends Component {
   }
   
   render() {
-
     const { cities, lists, authedUser } = this.state;
-    // console.log( 'App',this.response );
     return (
       <main className='App'>
-
         <div className="container">
-          
           <Switch>
             <Route 
               path={ [ '/home', '/lists/:listId' ] } 
               render={ routeProps => (
-                authedUser ? 
-                  <Home 
-                    lists={ lists }
-                    cities={ cities }
-                    response={ this.state.response }
-                    onAddList={ this.handleAddList }
-                    onDeleteList={ this.handleDeleteList }
-                    onAddCity={ this.handleAddCity } 
-                    onDeleteCity={ this.handleDeleteCity }
-                    onSignOut={ this.handleSignOut }
-                    { ...routeProps }
-                  />
-                : <Redirect to='/' />
-              )}/>
-            
+                authedUser 
+                  ? <Home 
+                      lists={ lists }
+                      cities={ cities }
+                      response={ this.state.response }
+                      onAddList={ this.handleAddList }
+                      onDeleteList={ this.handleDeleteList }
+                      onAddCity={ this.handleAddCity } 
+                      onDeleteCity={ this.handleDeleteCity }
+                      onSignOut={ this.handleSignOut }
+                      { ...routeProps }
+                    />
+                  : <Redirect to='/' />
+            )}/>
             <Route 
               path='/registration' 
               render={ () => (
                 <Registration
                   handleRegistration={ this.handleRegistration }
                 />
-              )}/>
+            )}/>
             <Route render={ () => (
               <Landing 
                 handleLogin={ this.handleLogin }

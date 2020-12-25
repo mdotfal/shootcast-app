@@ -8,7 +8,6 @@ class AddList extends Component {
     this.props.onAddList( e.target.inputList.value );
   }
 
-
   render() {
     return (
       <div className="addlist">

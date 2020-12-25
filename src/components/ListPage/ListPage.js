@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddCity from '../AddCity/AddCity';
+import CurrentWeather from '../CurrentWeather/CurrentWeather';
 import Item from '../Item/Item';
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './ListPage.css';
@@ -11,11 +12,20 @@ class ListPage extends Component {
     city: "",
   }
 
-  componentDidMount = () => {
-    const city = "San Bruno";
+  componentDidUpdate = ( prevProps, prevState ) => {
+    console.log( 'cdu ran')
+    // console.log( 'componentDidUpdate', 'prevState', prevState )
+    if( prevState.city !== this.state.city ) {
+       this.fetchWeather( this.state.city );
+    }
+  }
+
+  fetchWeather = () => {
+    console.log( 'fetchWeather ran' )
+    const city = !undefined ? this.state.city : "San Bruno";
     const baseForecast = `http://api.openweathermap.org/data/2.5/forecast?q=`;
     const baseWeather = `http://api.openweathermap.org/data/2.5/weather?q=`
-    const api_key = 'c981e672df25eb5c03349c2335d240dd';
+    const api_key = '9e87c427393cb8c3e29a65c2b58db7a3';
     const imperial = `&units=imperial`
     const forecastUrl = `${ baseForecast }${ city }&appid=${ api_key }${ imperial }`;
     const weatherUrl = `${ baseWeather }${ city }&appid=${ api_key }${ imperial }`;
@@ -35,28 +45,27 @@ class ListPage extends Component {
     })
     .then( ([ forecastData, weatherData ]) => {
       const forecast = forecastData.list.filter( reading => reading.dt_txt.includes("18:00:00") );
+      
       this.setState({
         forecastData: forecast,
-        weatherData
+        weatherData,
       })
     })
     .catch( err => err.message );
   }
 
   formatForecast = () => {
-    return this.state.forecastData.map( ( reading, i ) => 
-      <WeatherDisplay reading={ reading } key={ i } /> )
+    return this.state.forecastData.map( ( data, i ) => 
+      <WeatherDisplay data={ data } key={ i } /> 
+    )
   }
 
-  getNameOnClick = cityName => {
-    console.log( 'getNameOnClick clicked', this.state.city )
-    this.setState({
-      city: cityName,
-    })
+  getNameOnClick = ( cityName ) => {
+    this.setState({ city: cityName });
   }
 
   render() {
-    // console.log('listpage-statedata', this.state )
+
     return (
       <div className="list">
         <AddCity 
@@ -67,10 +76,9 @@ class ListPage extends Component {
         <div className="list-cities">
           <ul>
             <p>Click a city to view Weather</p>
+
             { this.props.cities.map( (city , i ) =>
-              <li 
-                key={ i }
-                >
+              <li key={ i }>
                 <Item
                   id={ city.id }
                   value={ city.name }
@@ -84,10 +92,13 @@ class ListPage extends Component {
           <div className="list-forecast">
             {/*  This is Weather Display */}
             <div className="city-name">
-              <h2>{ this.state.weatherData.name }</h2>
+              <CurrentWeather wData={ this.state.weatherData } />
             </div>
             <div className="forecast-items">
-              { this.formatForecast() }
+              
+              { this.state.city !== "" 
+                ? this.formatForecast()
+                : "Welcome to ShootCast!  Click a city to begin!" }
             </div>
           </div>
         </div>
