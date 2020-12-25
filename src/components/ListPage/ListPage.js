@@ -21,8 +21,8 @@ class ListPage extends Component {
 
   fetchWeather = () => {
     const city = !undefined ? this.state.city : "San Bruno";
-    const baseForecast = `http://api.openweathermap.org/data/2.5/forecast?q=`;
-    const baseWeather = `http://api.openweathermap.org/data/2.5/weather?q=`
+    const baseForecast = `https://api.openweathermap.org/data/2.5/forecast?q=`;
+    const baseWeather = `https://api.openweathermap.org/data/2.5/weather?q=`
     const api_key = `${ config.API_KEY }`;
     const imperial = `&units=imperial`
     const forecastUrl = `${ baseForecast }${ city }&appid=${ api_key }${ imperial }`;
