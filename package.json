@@ -20,9 +20,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "react-scripts test",
+    "prebuild": "react-scripts test --exit",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --exit",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
     "deploy": "yarn vercel --prod"
