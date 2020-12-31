@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/shootcast-app/static/css/main.54b01520.chunk.css",
+    "main.js": "/shootcast-app/static/js/main.22fe2711.chunk.js",
+    "main.js.map": "/shootcast-app/static/js/main.22fe2711.chunk.js.map",
+    "runtime-main.js": "/shootcast-app/static/js/runtime-main.958174b6.js",
+    "runtime-main.js.map": "/shootcast-app/static/js/runtime-main.958174b6.js.map",
+    "static/js/2.b3a7fb7c.chunk.js": "/shootcast-app/static/js/2.b3a7fb7c.chunk.js",
+    "static/js/2.b3a7fb7c.chunk.js.map": "/shootcast-app/static/js/2.b3a7fb7c.chunk.js.map",
+    "index.html": "/shootcast-app/index.html",
+    "static/css/main.54b01520.chunk.css.map": "/shootcast-app/static/css/main.54b01520.chunk.css.map",
+    "static/js/2.b3a7fb7c.chunk.js.LICENSE.txt": "/shootcast-app/static/js/2.b3a7fb7c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.958174b6.js",
+    "static/js/2.b3a7fb7c.chunk.js",
+    "static/css/main.54b01520.chunk.css",
+    "static/js/main.22fe2711.chunk.js"
+  ]
+}
