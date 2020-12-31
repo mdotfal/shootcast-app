@@ -5,7 +5,10 @@ import Item from '../Item/Item';
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './ListPage.css';
 import config from '../../config';
+import AppContext from '../../AppContext';
 class ListPage extends Component {
+
+  static contextType = AppContext;
 
   state = {
     forecastData: [],
@@ -65,10 +68,7 @@ class ListPage extends Component {
 
     return (
       <div className="list">
-        <AddCity 
-          onAddCity={ this.props.onAddCity }
-          lists={ this.props.lists }
-        />
+        <AddCity />
         <br />
         <div className="list-cities">
           <ul>
@@ -81,12 +81,12 @@ class ListPage extends Component {
                   value={ city.name }
                   city={ city }
                   getNameOnClick={ this.getNameOnClick }
-                  onDeleteCity={ this.props.onDeleteCity }
                 />
               </li>
               )}
           </ul>
           <div className="list-forecast">
+
             {/*  This is Weather Display */}
             <div className="city-name">
               <CurrentWeather 
@@ -97,7 +97,8 @@ class ListPage extends Component {
               
               { this.state.city !== "" 
                 ? this.formatForecast()
-                : "Welcome to ShootCast!  Click a city to begin!" }
+                : "Welcome to ShootCast!  Click a city to begin!" 
+              }
             </div>
           </div>
         </div>

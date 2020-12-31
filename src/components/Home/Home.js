@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Sidebar from '../Sidebar/Sidebar';
-import ListPage from '../ListPage/ListPage';;
+import ListPage from '../ListPage/ListPage';
+import AppContext from '../../AppContext';
 
 
 class Home extends Component {
 
+  static contextType = AppContext;
+
   render() {
     const { listId } = this.props.match.params
-    const cities = !listId ? this.props.cities : this.props.cities.filter( item => item.listId === listId );
-
+    const cities = !listId 
+    ? this.context.cities 
+    : this.context.cities.filter( item => item.list_id === parseInt( listId ))
+    
     return (
       <>
-        <Nav 
-          onSignOut={ this.props.onSignOut }
-        />
-        <Sidebar 
-          { ...this.props }
-          // lists={ this.props.lists }
-          // onAddList={ this.props.onAddList }
-          // onDeleteList={ this.props.onDeleteList }
-        />
-        <ListPage 
+        <Nav />
+        <Sidebar />
+        <ListPage
           cities={ cities }
-          lists={ this.props.lists }
-          onDeleteCity={ this.props.onDeleteCity }
-          onAddCity={ this.props.onAddCity } 
         />
       </>
     );

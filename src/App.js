@@ -128,6 +128,11 @@ class App extends Component {
     const value = {
       lists,
       cities,
+      onAddCity: this.handleAddCity,
+      onDeleteCity: this.handleDeleteCity,
+      onSignOut: this.handleSignOut,
+      onAddList: this.handleAddList,
+      onDeleteList: this.handleDeleteList,
     }
 
     return (
@@ -141,14 +146,8 @@ class App extends Component {
                   render={ routeProps => (
                     authedUser 
                       ? <Home 
-                          lists={ lists }
                           cities={ cities }
                           response={ this.state.response }
-                          onAddList={ this.handleAddList }
-                          onDeleteList={ this.handleDeleteList }
-                          onAddCity={ this.handleAddCity } 
-                          onDeleteCity={ this.handleDeleteCity }
-                          onSignOut={ this.handleSignOut }
                           { ...routeProps }
                         />
                       : <Redirect to='/' />

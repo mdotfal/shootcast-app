@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import AppContext from '../../AppContext';
 import config from '../../config';
 
 class Item extends Component {
+
+  static contextType = AppContext;
 
   state = {
     city: "",
@@ -26,7 +29,7 @@ class Item extends Component {
       return res;
     })
     .then( ( city ) => {
-      this.props.onDeleteCity( itemId );
+      this.context.onDeleteCity( itemId );
       this.setState({
         city
       })
@@ -37,6 +40,7 @@ class Item extends Component {
   }
 
   render() {
+
     return (
       <div className="item">
           <div 

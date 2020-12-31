@@ -13,7 +13,7 @@ class Nav extends Component {
         <Link to='/home'>
           Home  
         </Link>
-          <p onClick={ this.props.onSignOut }>Sign Out</p>
+          <p onClick={ this.context.onSignOut }>Sign Out</p>
       </div>
     );
   }

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import AppContext from '../../AppContext';
 import config from '../../config';
 import './AddList.css';
 
 class AddList extends Component {
+
+  static contextType = AppContext;
 
   addList = name => {
     fetch( `${ config.API_ENDPOINT }/api/lists`, {
@@ -14,7 +17,7 @@ class AddList extends Component {
     })
     .then( res => res.json())
     .then( data => {
-      this.props.onAddList( data );
+      this.context.onAddList( data );
     })
     .catch( error => { console.log( error )})
   }

@@ -23,7 +23,7 @@ class Sidebar extends Component {
       return res;
     })
     .then( () => {
-      this.props.onDeleteList( listId );
+      this.context.onDeleteList( listId );
     })
     .catch( error => {
       console.log( error );
@@ -49,7 +49,7 @@ class Sidebar extends Component {
             </li>
           )}
         </ul>
-      <AddList onAddList={ this.props.onAddList }/>
+      <AddList />
       </div>
     );
   };

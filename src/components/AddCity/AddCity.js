@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import AppContext from '../../AppContext';
 import config from '../../config';
 
 class AddCity extends Component {
+
+  static contextType = AppContext;
 
   onSubmit = e => {
     e.preventDefault();
@@ -18,10 +21,9 @@ class AddCity extends Component {
     })
     .then( res => res.json())
     .then( data => {
-      this.props.onAddCity( data );
+      this.context.onAddCity( data );
     })
     .catch( error => { console.log( error )})
-    // this.addCity( e.target.search.value, e.target.listId.value )
   }
 
   render() {
@@ -34,7 +36,7 @@ class AddCity extends Component {
   
           <label htmlFor=""></label>
           <select id="listId" name="listId">
-            { this.props.lists.map( ( list, i ) => 
+            { this.context.lists.map( ( list, i ) => 
               <option
                 key={ i }
                 value={ list.id }
