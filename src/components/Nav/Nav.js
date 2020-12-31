@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AppContext from '../../AppContext';
 import './Nav.css';
 
-function Nav( props) {
+class Nav extends Component {
 
-  return (
-    <div className="nav">
-      <Link to='/home'>
-        Home  
-      </Link>
-        <p onClick={ props.onSignOut }>Sign Out</p>
-    </div>
-  );
+  static contextType = AppContext;
+
+  render() {
+    return (
+      <div className="nav">
+        <Link to='/home'>
+          Home  
+        </Link>
+          <p onClick={ this.props.onSignOut }>Sign Out</p>
+      </div>
+    );
+  }
+
 };
 
 export default Nav;

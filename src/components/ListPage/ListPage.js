@@ -6,7 +6,7 @@ import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './ListPage.css';
 import config from '../../config';
 class ListPage extends Component {
-  
+
   state = {
     forecastData: [],
     weatherData: [],

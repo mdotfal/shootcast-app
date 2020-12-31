@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
+import config from '../../config';
 import './AddList.css';
 
 class AddList extends Component {
 
+  addList = name => {
+    fetch( `${ config.API_ENDPOINT }/api/lists`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ name })
+    })
+    .then( res => res.json())
+    .then( data => {
+      this.props.onAddList( data );
+    })
+    .catch( error => { console.log( error )})
+  }
+
   onSubmit = e => {
     e.preventDefault();
-    this.props.onAddList( e.target.inputList.value );
+    this.addList( e.target.inputList.value );
   }
 
   render() {

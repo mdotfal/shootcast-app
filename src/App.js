@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Landing from './components/Landing/Landing';
 import Registration from './components/Registration/Registration';
-import store from './store';
-import { v4 as uuidv4 } from 'uuid';
 import './App.css';
+import config from './config';
+import AppContext from './AppContext';
 
 const users = [
   { 
@@ -30,46 +30,63 @@ class App extends Component {
   };
   
   componentDidMount = () => {
-    this.setState( store );
+
+    const url = config.API_ENDPOINT;
+    const listsObj = `${ url }/api/lists`;
+    const citiesObj = `${ url }/api/cities`;
+
+    Promise.all([
+      fetch( listsObj ),
+      fetch( citiesObj )
+    ])
+    .then( ([ listsObj, citiesObj ]) => {
+      if( !listsObj.ok ) {
+        return listsObj.json().then( e => Promise.reject( e ));
+      }
+      if( !citiesObj.ok ) {
+        return citiesObj.json().then( e => Promise.reject( e ));
+      }
+      return Promise.all([ listsObj.json(), citiesObj.json() ]);
+    })
+    .then( ([ listsObj, citiesObj ]) => {
+      this.setState({
+        lists: listsObj, 
+        cities: citiesObj
+      })
+    })
+    .catch( err => err.message );
   }
 
-  handleDeleteList = list => {
-    const newList = this.state.lists.filter( itm => itm !== list );
+
+  handleDeleteList = listId => {
+    const newList = this.state.lists.filter( itm => itm.id !== listId );
     this.setState({
       lists: newList,
     })
   }
   
   handleAddList = ( listName ) => {
-    const newList = [
-      ...this.state.lists,
-      { 
-        name: listName,
-        id: uuidv4(), 
-      },
-    ];
     this.setState({
-      lists: newList
+      lists: [
+        ...this.state.lists,
+        listName
+      ]
     })
   }
   
-  handleDeleteCity = city => {
-    const newCities = this.state.cities.filter( itm => itm !== city );
+  handleDeleteCity = cityId => {
+    const newCities = this.state.cities.filter( itm => itm.id !== cityId );
     this.setState({
       cities: newCities,
     })
   }
 
   handleAddCity = ( cityName, listId ) => {
-    const newCity = [
-      ...this.state.cities,
-      { 
-        name: cityName,
-        listId,
-      }
-    ];
     this.setState({
-      cities: newCity,
+      cities: [
+        ...this.state.cities,
+        { cityName, listId }
+      ],
     })
   }
 
@@ -107,45 +124,53 @@ class App extends Component {
   
   render() {
     const { cities, lists, authedUser } = this.state;
+
+    const value = {
+      lists,
+      cities,
+    }
+
     return (
-      <main className='App'>
-        <div className="container">
-          <BrowserRouter>
-            <Switch>
-              <Route 
-                path={ [ '/home', '/lists/:listId' ] } 
-                render={ routeProps => (
-                  authedUser 
-                    ? <Home 
-                        lists={ lists }
-                        cities={ cities }
-                        response={ this.state.response }
-                        onAddList={ this.handleAddList }
-                        onDeleteList={ this.handleDeleteList }
-                        onAddCity={ this.handleAddCity } 
-                        onDeleteCity={ this.handleDeleteCity }
-                        onSignOut={ this.handleSignOut }
-                        { ...routeProps }
-                      />
-                    : <Redirect to='/' />
-              )}/>
-              <Route 
-                path='/registration' 
-                render={ () => (
-                  <Registration
-                    handleRegistration={ this.handleRegistration }
+      <AppContext.Provider value={ value }>
+        <main className='App'>
+          <div className="container">
+            <BrowserRouter>
+              <Switch>
+                <Route 
+                  path={ [ '/home', '/lists/:listId' ] } 
+                  render={ routeProps => (
+                    authedUser 
+                      ? <Home 
+                          lists={ lists }
+                          cities={ cities }
+                          response={ this.state.response }
+                          onAddList={ this.handleAddList }
+                          onDeleteList={ this.handleDeleteList }
+                          onAddCity={ this.handleAddCity } 
+                          onDeleteCity={ this.handleDeleteCity }
+                          onSignOut={ this.handleSignOut }
+                          { ...routeProps }
+                        />
+                      : <Redirect to='/' />
+                )}/>
+                <Route 
+                  path='/registration' 
+                  render={ () => (
+                    <Registration
+                      handleRegistration={ this.handleRegistration }
+                    />
+                )}/>
+                <Route render={ () => (
+                  <Landing 
+                    handleLogin={ this.handleLogin }
+                    authedUser={ authedUser }
                   />
-              )}/>
-              <Route render={ () => (
-                <Landing 
-                  handleLogin={ this.handleLogin }
-                  authedUser={ authedUser }
-                />
-              )}/>
-            </Switch>
-          </BrowserRouter>
-        </div>
-      </main>
+                )}/>
+              </Switch>
+            </BrowserRouter>
+          </div>
+        </main>
+      </AppContext.Provider>
     );
   };
 };

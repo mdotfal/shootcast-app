@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import AddList from '../AddList/AddList';
-
 class SidebarItems extends Component {
   render() {
     // console.log( 'sidebar items',props );

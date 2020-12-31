@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
+import config from '../../config';
 
 class AddCity extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.props.onAddCity( e.target.search.value, e.target.listId.value )
+    const newCity = {
+      name: e.target.search.value,
+      list_id: e.target.listId.value
+    }
+    fetch( `${ config.API_ENDPOINT }/api/cities`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify( newCity )
+    })
+    .then( res => res.json())
+    .then( data => {
+      this.props.onAddCity( data );
+    })
+    .catch( error => { console.log( error )})
+    // this.addCity( e.target.search.value, e.target.listId.value )
   }
 
   render() {
