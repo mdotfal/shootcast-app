@@ -2,6 +2,7 @@
   "name": "shootcast-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://mdotfal.github.io/shootcast-app",
   "dependencies": {
     "-": "^0.0.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -28,7 +29,7 @@
     "test": "CI=true react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
-    "deploy": "yarn vercel"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
