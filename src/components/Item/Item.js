@@ -51,7 +51,10 @@ class Item extends Component {
             <button
               className="btn"
               type="button"
-              onClick={ () => this.handleDelete( this.props.city.id ) }
+              onClick={ ( e ) => {
+                e.stopPropagation();
+                this.handleDelete( this.props.city.id )}
+              }
             >x</button>
           </div>
       </div>
