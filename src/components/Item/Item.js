@@ -45,7 +45,10 @@ class Item extends Component {
       <div className="item">
           <div 
             className="city-item"
-            onClick={ e => this.onClick( e ) }
+            onClick={ e => {
+              e.stopPropagation();
+              this.onClick( e ) }
+            }
             >
               { this.props.city.name }
             <button
