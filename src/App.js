@@ -24,7 +24,7 @@ class App extends Component {
   state = {
     cities: [],
     lists: [],
-    authedUser: false,
+    authedUser: true,
     users,
     response: {},
   };
@@ -81,11 +81,11 @@ class App extends Component {
     })
   }
 
-  handleAddCity = ( cityName, listId ) => {
+  handleAddCity = ( city ) => {
     this.setState({
       cities: [
         ...this.state.cities,
-        { cityName, listId }
+        city
       ],
     })
   }

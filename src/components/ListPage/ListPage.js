@@ -65,7 +65,6 @@ class ListPage extends Component {
   }
 
   render() {
-
     return (
       <div className="list">
         <AddCity />

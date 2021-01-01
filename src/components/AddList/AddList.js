@@ -7,7 +7,10 @@ class AddList extends Component {
 
   static contextType = AppContext;
 
-  addList = name => {
+  addList = event => {
+  
+    const name = event.target.inputList.value;
+
     fetch( `${ config.API_ENDPOINT }/api/lists`, {
       method: 'POST',
       headers: {
@@ -18,13 +21,14 @@ class AddList extends Component {
     .then( res => res.json())
     .then( data => {
       this.context.onAddList( data );
+      event.target.inputList.value = '';
     })
     .catch( error => { console.log( error )})
   }
 
   onSubmit = e => {
     e.preventDefault();
-    this.addList( e.target.inputList.value );
+    this.addList( e );
   }
 
   render() {

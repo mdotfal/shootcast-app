@@ -22,6 +22,7 @@ class AddCity extends Component {
     .then( res => res.json())
     .then( data => {
       this.context.onAddCity( data );
+      e.target.search.value = '';
     })
     .catch( error => { console.log( error )})
   }

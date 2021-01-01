@@ -10,10 +10,10 @@ class Home extends Component {
   static contextType = AppContext;
 
   render() {
-    const { listId } = this.props.match.params
+    let listId = parseInt( this.props.match.params.listId )
     const cities = !listId 
-    ? this.context.cities 
-    : this.context.cities.filter( item => item.list_id === parseInt( listId ))
+      ? this.context.cities 
+      : this.context.cities.filter( item => item.list_id === listId )
     
     return (
       <>
