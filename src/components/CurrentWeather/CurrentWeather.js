@@ -6,7 +6,7 @@ function CurrentWeather( props ) {
   const sunset = ( stamp ) => {
     const timeFormat = new Intl.DateTimeFormat( 'en-US', {
       timeStyle: 'medium',
-      timeZone: 'PST'
+      timeZone: 'America/Los_Angeles'
     });
     return timeFormat.format( new Date( stamp * 1000 ))
   }
