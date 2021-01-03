@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import './WeatherDisplay.css';
 
@@ -24,6 +25,10 @@ class WeatherDisplay extends Component {
       </div>
     );
   }
+}
+
+WeatherDisplay.propTypes = {
+  data: PropTypes.object,
 }
 
 export default WeatherDisplay;

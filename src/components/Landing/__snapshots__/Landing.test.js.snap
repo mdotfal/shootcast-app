@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Component should render 1`] = `
+<div
+  className="landing-page"
+>
+  <h1>
+    Welcome to the ShootCast App
+  </h1>
+  <p>
+    In a world of varying climates and back-to-back creative shoots, a way to keep in the know of current weather situations is a must.
+  </p>
+  <p>
+    ShootCast is an app that will help you do so and create custom lists of cities to see the weather conditions with the click of a mouse.
+  </p>
+  <p>
+    Find out the current weather forecast and plan your shoot correctly.
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="landing-container"
+    >
+      <label
+        htmlFor="username"
+      >
+        <b>
+          Username
+        </b>
+      </label>
+      <input
+        name="username"
+        onChange={[Function]}
+        placeholder="Enter Username"
+        required={true}
+        type="text"
+      />
+      <label
+        htmlFor="password"
+      >
+        <b>
+          Password
+        </b>
+      </label>
+      <input
+        name="password"
+        onChange={[Function]}
+        placeholder="Enter Password"
+        required={true}
+        type="password"
+      />
+      <button
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+  or
+  <br />
+  <a
+    href="/registration"
+    onClick={[Function]}
+  >
+    <button>
+      Register
+    </button>
+  </a>
+</div>
+`;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CurrentWeather.css';
 
 function CurrentWeather( props ) {
@@ -24,6 +25,10 @@ function CurrentWeather( props ) {
       }
     </div>
   );
+}
+
+CurrentWeather.propTypes = {
+  wData: PropTypes.array,
 }
 
 export default CurrentWeather;

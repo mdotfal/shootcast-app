@@ -6,6 +6,7 @@ import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
 import './ListPage.css';
 import config from '../../config';
 import AppContext from '../../AppContext';
+import PropTypes from 'prop-types';
 class ListPage extends Component {
 
   static contextType = AppContext;
@@ -106,5 +107,9 @@ class ListPage extends Component {
     );
   }
 };
+
+ListPage.propTypes = {
+  cities: PropTypes.array,
+}
 
 export default ListPage;

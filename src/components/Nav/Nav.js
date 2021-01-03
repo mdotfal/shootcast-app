@@ -24,7 +24,6 @@ class Nav extends Component {
       </div>
     );
   }
-
 };
 
 export default Nav;

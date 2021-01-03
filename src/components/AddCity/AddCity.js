@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AppContext from '../../AppContext';
 import config from '../../config';
 import './AddCity.css';
@@ -56,5 +57,10 @@ class AddCity extends Component {
     );
   };
 };
+
+AddCity.propTypes = {
+  lists: PropTypes.array,
+}
+
 
 export default AddCity;

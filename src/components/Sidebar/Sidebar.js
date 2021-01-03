@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ListPage from '../ListPage/ListPage';
 import AddList from '../AddList/AddList';
 import config from '../../config';
 import './Sidebar.css';
-
 import AppContext from '../../AppContext';
 
 class Sidebar extends Component {
@@ -64,5 +64,10 @@ class Sidebar extends Component {
     );
   };
 };
+
+Sidebar.propTypes = {
+  lists: PropTypes.array,
+  cities: PropTypes.array,
+}
 
 export default Sidebar;

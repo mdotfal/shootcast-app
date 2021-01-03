@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Nav from '../Nav/Nav';
 import Sidebar from '../Sidebar/Sidebar';
-// import ListPage from '../ListPage/ListPage';
 import AppContext from '../../AppContext';
 import './Home.css';
 
 class Home extends Component {
+
 
   static contextType = AppContext;
 
@@ -24,11 +25,14 @@ class Home extends Component {
               cities={ cities }
             />
           </div>
-
         </div>
       </div>
     );
   }
 };
+
+Home.propTypes = {
+  cities: PropTypes.array
+}
 
 export default Home;

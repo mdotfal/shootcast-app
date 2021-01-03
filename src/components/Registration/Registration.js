@@ -72,7 +72,7 @@ class Registration extends Component {
         
             
             <button type="submit" className="registerbtn">Register</button>
-            <Link>
+            <Link to='#'>
               <button type="button" className="cancelbtn">Cancel</button>
             </Link>
           </div>
