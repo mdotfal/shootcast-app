@@ -95,7 +95,10 @@ class ListPage extends Component {
             
             { this.state.city !== "" 
               ? this.formatForecast()
-              : "Welcome to ShootCast!  Click a city to get weather!" 
+              : <div className="forecast-welcome">
+                  <h2>Welcome to ShootCast!</h2>
+                  <p>Click a city to get weather!</p>
+                </div>
             }
           </div>
         </div>

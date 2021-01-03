@@ -32,11 +32,14 @@ class AddCity extends Component {
     return (
       <div className="addcity">
         <form className="addcity-form" onSubmit={ this.onSubmit }>
-          <p>Add a City to your List</p>
-          <label htmlFor="search"></label>
+          <label htmlFor="search">
+            <p>Add a City to your List</p>
+            
+          </label>
           <input type="text" placeholder="Enter City" name="search" id="search" required />
+          <label htmlFor="listId">
             <p>Select a list.</p>
-          <label htmlFor="listId"></label>
+          </label>
           <select id="listId" name="listId">
             { this.context.lists.map( ( list, i ) => 
               <option

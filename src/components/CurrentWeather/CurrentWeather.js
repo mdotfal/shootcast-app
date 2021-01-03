@@ -13,7 +13,7 @@ function CurrentWeather( props ) {
 
   return (
     <div className='current-weather'>
-      <h2>{ props.wData.name }</h2>
+      <h2>*{ props.wData.name }</h2>
       { props.wData.length !== 0
           ? <div>
               <h1>{ Math.round( props.wData.main.temp ) }°F</h1>

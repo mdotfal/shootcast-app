@@ -35,8 +35,10 @@ class AddList extends Component {
     return (
       <div className="addlist">
         <form className="addlist-form" onSubmit={ this.onSubmit }>
-          <label htmlFor="inputList"></label>
-          <input type="text" placeholder="Enter List Name" name="inputList" id="inputList" required />
+          <label htmlFor="inputList">
+            *
+          </label>
+          <input type="text" placeholder="Southern California" name="inputList" id="inputList" required />
           <button
             type="submit" 
           >Add List</button>

@@ -13,7 +13,25 @@ button[ type=submit ] {
 input#inputList,
 input#search,
 select#listId {
-  width: 150px;
+  width: 120px;
+}
+
+input#inputList,
+input#search {
+  width: 120px;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+input#inputList:focus,
+input#search:focus {
+  width: 70%;
+}
+
+input#inputList,
+input#search {
+  border: none;
+  border-bottom: 2px solid #5e351b;
 }
 
 button[ type=submit ] {
