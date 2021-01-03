@@ -35,8 +35,8 @@ class AddCity extends Component {
           <p>Add a City to your List</p>
           <label htmlFor="search"></label>
           <input type="text" placeholder="Enter City" name="search" id="search" required />
-  
-          <label htmlFor=""></label>
+            <p>Select a list.</p>
+          <label htmlFor="listId"></label>
           <select id="listId" name="listId">
             { this.context.lists.map( ( list, i ) => 
               <option

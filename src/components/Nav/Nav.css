@@ -3,19 +3,22 @@
 
 .nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border: 1px solid #97542A;
-  margin: 10px;
+  /* border: 1px solid #97542A; */
+  margin: 5px;
   overflow: auto;
+  border-radius: 25px;
+  background-color: #F6EDE7;
+  width: 100%;
 }
 
 .nav-logo {
   font-family: sarina, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 35px;
+  font-size: 40px;
   color: orange;
 }
 

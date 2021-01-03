@@ -7,6 +7,7 @@ input[ type=password ],
 button,
 button[ type=submit ] {
   width: 100px;
+  margin: 10px 0;
 }
 
 input#inputList,
@@ -16,7 +17,8 @@ select#listId {
 }
 
 button[ type=submit ] {
-  margin-top: 2px;
+  margin: 10px;
+  background-color: #F6EDE7;
 }
 
 button {

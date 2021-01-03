@@ -36,23 +36,26 @@ class Sidebar extends Component {
     
     return (
       <div className="sidebar">
-        <p>Add new list.</p>
+        <h1>Welcome!</h1>
+        <p>ShootCast is an app where you can create custom lists of cities to view the current weather and forecast for any given city.</p>
         <AddList />
-        <h3>Click to display cities.</h3>
-        <ul>
-          { this.context.lists.map( ( list, i ) => 
-            <li key={ i }>
-              <NavLink to={ `/lists/${ list.id }` }> 
-              { list.name }
-              </NavLink>
-                <button
-                className="btn"
-                type="button"
-                onClick={ () => this.handleDelete( list.id )}
-              >x</button>
-            </li>
-          )}
-        </ul>
+        <div className="sidebar-lists-map">
+        <h2>Click to display list.</h2>
+          <ul>
+            { this.context.lists.map( ( list, i ) => 
+              <li key={ i }>
+                <NavLink to={ `/lists/${ list.id }` }> 
+                { list.name }
+                </NavLink>
+                  <button
+                  className="btn"
+                  type="button"
+                  onClick={ () => this.handleDelete( list.id )}
+                >x</button>
+              </li>
+            )}
+          </ul>
+        </div>
         <br />
         <ListPage 
           cities={ this.props.cities }
