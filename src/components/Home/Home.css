@@ -1,0 +1,7 @@
+.main-home {
+  display: flex;
+  flex-direction: space-evenly;
+  justify-content: center;
+  min-width: 500px;
+  overflow: auto;
+}

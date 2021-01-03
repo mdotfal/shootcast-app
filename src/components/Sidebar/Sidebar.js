@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import ListPage from '../ListPage/ListPage';
 import AddList from '../AddList/AddList';
 import config from '../../config';
 import './Sidebar.css';
+
 import AppContext from '../../AppContext';
 
 class Sidebar extends Component {
@@ -34,7 +36,9 @@ class Sidebar extends Component {
     
     return (
       <div className="sidebar">
-        <h3>Click to display cities or add a custom list.</h3>
+        <p>Add new list.</p>
+        <AddList />
+        <h3>Click to display cities.</h3>
         <ul>
           { this.context.lists.map( ( list, i ) => 
             <li key={ i }>
@@ -49,7 +53,10 @@ class Sidebar extends Component {
             </li>
           )}
         </ul>
-      <AddList />
+        <br />
+        <ListPage 
+          cities={ this.props.cities }
+        />
       </div>
     );
   };

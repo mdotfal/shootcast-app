@@ -24,7 +24,7 @@ class App extends Component {
   state = {
     cities: [],
     lists: [],
-    authedUser: false,
+    authedUser: true,
     users,
     response: {},
   };

@@ -68,10 +68,9 @@ class ListPage extends Component {
     return (
       <div className="list">
         <AddCity />
-        <br />
         <div className="list-cities">
+          <p>&#8678; Click a city to view Weather &#8680;</p>
           <ul>
-            <p>Click a city to view Weather</p>
 
             { this.props.cities.map( (city , i ) =>
               <li key={ i }>
@@ -84,21 +83,20 @@ class ListPage extends Component {
               </li>
               )}
           </ul>
-          <div className="list-forecast">
-
-            {/*  This is Weather Display */}
-            <div className="city-name">
-              <CurrentWeather 
-                wData={ this.state.weatherData } 
-              />
-            </div>
-            <div className="forecast-items">
-              
-              { this.state.city !== "" 
-                ? this.formatForecast()
-                : "Welcome to ShootCast!  Click a city to begin!" 
-              }
-            </div>
+        </div>
+        <div className="list-forecast">
+          {/*  This is Weather Display */}
+          <div className="city-name">
+            <CurrentWeather 
+              wData={ this.state.weatherData } 
+            />
+          </div>
+          <div className="forecast-items">
+            
+            { this.state.city !== "" 
+              ? this.formatForecast()
+              : "Welcome to ShootCast!  Click a city to begin!" 
+            }
           </div>
         </div>
      </div>

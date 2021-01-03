@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Sidebar from '../Sidebar/Sidebar';
-import ListPage from '../ListPage/ListPage';
+// import ListPage from '../ListPage/ListPage';
 import AppContext from '../../AppContext';
-
+import './Home.css';
 
 class Home extends Component {
 
@@ -16,13 +16,17 @@ class Home extends Component {
       : this.context.cities.filter( item => item.list_id === listId )
     
     return (
-      <>
+      <div className="main">
         <Nav />
-        <Sidebar />
-        <ListPage
-          cities={ cities }
-        />
-      </>
+        <div className="main-home">
+          <div className="sidebar-home">
+            <Sidebar 
+              cities={ cities }
+            />
+          </div>
+
+        </div>
+      </div>
     );
   }
 };

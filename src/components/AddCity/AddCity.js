@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AppContext from '../../AppContext';
 import config from '../../config';
+import './AddCity.css';
 
 class AddCity extends Component {
 

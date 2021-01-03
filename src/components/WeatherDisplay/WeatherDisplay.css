@@ -1,12 +1,21 @@
-.current-weather-display,
-.current-weather-forecast {
+.weather-display {
   display: flex;
   flex-direction: row;
-  /* position: absolute; */
-  text-align: center;
-  justify-content: center;
+}
+
+.weather-display h2 {
+  margin: 5px;
+}
+
+.weather-display-items {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  /* justify-content: center; */
   align-items: center;
-  padding: 10px;
+}
+
+.current-weather-forecast {
 }
 
 .current-weather-forecast span {

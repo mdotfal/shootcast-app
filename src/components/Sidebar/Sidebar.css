@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
+
 .sidebar {
-  /* position: absolute; */
+  font-family: 'Noto Sans JP', sans-serif;
   text-align: center;
-  border: 1px solid blue;
-  /* width: 200px; */
-  /* height: 600px; */
-  margin: 10px;
+  /* border: 1px solid blue; */
+  /* max-width: 200px; */
+  /* max-height: 400px; */
+  margin-right: 0;
+}
+
+.sidebar h3, p {
+  font-size: 15px;
 }
 
 .sidebar ul {
+  padding-left: 0;
   list-style-type: none;
-}
-
-.sidebar p {
-  border: 1px solid red;
-  margin: 2px;
-  width: 150px;
+  font-size: 12px;
 }
 
 .sidebar-form {
@@ -23,8 +25,13 @@
   width: 100px;
 }
 
-.sidebar-items {
+.addlist-form {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+input[ type-text ] {
+  width: 150px;
+  padding: .5em;
 }

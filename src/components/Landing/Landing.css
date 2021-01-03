@@ -1,8 +1,3 @@
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   text-align: center;
 }
@@ -12,6 +7,12 @@ input[ type=password ],
 button,
 button[ type=submit ] {
   width: 100px;
+}
+
+input#inputList,
+input#search,
+select#listId {
+  width: 150px;
 }
 
 button[ type=submit ] {

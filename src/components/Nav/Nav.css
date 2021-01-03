@@ -1,15 +1,33 @@
+@import url("https://use.typekit.net/yar1vam.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
+
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   padding: 10px;
-  border: 1px solid green;
+  border: 1px solid #97542A;
   margin: 10px;
+  overflow: auto;
+}
+
+.nav-logo {
+  font-family: sarina, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  color: orange;
+}
+
+.nav-links {
+  font-family: 'Noto Sans JP', sans-serif;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav a {
   padding: 0;
   color: #000;
   text-decoration: none;
-  margin: 16px 10px;
+  margin: 12px 10px;
 }

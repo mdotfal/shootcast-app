@@ -10,10 +10,17 @@ class Nav extends Component {
   render() {
     return (
       <div className="nav">
-        <Link to='/home'>
-          Home  
-        </Link>
-          <p onClick={ this.context.onSignOut }>Sign Out</p>
+        <div className="nav-logo">
+          ShootCast
+        </div>
+        <div className="nav-links">
+          <Link to='/home'>
+            Home  
+          </Link>
+          <Link to='/' onClick={ this.context.onSignOut }>
+            Sign Out
+          </Link>
+        </div>
       </div>
     );
   }
