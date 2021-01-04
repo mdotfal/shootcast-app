@@ -12,6 +12,14 @@
 }
 
 input {
-  
   margin: 2px;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+fieldset {
+  border-radius: 20px;
 }

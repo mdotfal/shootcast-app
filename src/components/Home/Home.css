@@ -1,7 +1,20 @@
+/*  Home Styles */
+
+body {
+  margin: auto;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
 .main-home {
   display: flex;
-  flex-direction: space-evenly;
+  align-items: center;
   justify-content: center;
-  min-width: 500px;
-  overflow: auto;
+  width: 400px;
 }

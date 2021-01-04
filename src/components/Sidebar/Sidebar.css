@@ -3,10 +3,9 @@
 .sidebar {
   font-family: 'Noto Sans JP', sans-serif;
   text-align: center;
-  /* border: 1px solid blue; */
-  max-width: 400px;
+  width: 400px;
   max-height: 800px;
-  margin-right: 0;
+  margin: 5px;
 }
 
 .sidebar h3, p {
@@ -17,11 +16,10 @@
   color: white;
 }
 
-.sidebar ul {
+.sidebar-ul {
   padding-left: 0;
   list-style-type: none;
   font-size: 12px;
-  /* color: white; */
 }
 
 .sidebar-form {
@@ -55,12 +53,9 @@
   font-size: 14px;
 }
 
-/* .addlist-form {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* input[ type-text ] {
-  width: 150px;
-  padding: .5em;
-} */
+@media all and ( min-width: 600px ) {
+  
+  .sidebar {
+    width: 600px;
+  }
+}

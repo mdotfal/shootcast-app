@@ -9,10 +9,11 @@
 
 .weather-display-items {
   display: flex;
-  flex-direction: column;
-  /* text-align: center; */
-  /* justify-content: center; */
+  justify-content: flex-start;
+  flex-direction: row;
   align-items: center;
+  padding: 0 10px;
+  width: 250px;
 }
 
 .current-weather-forecast span {

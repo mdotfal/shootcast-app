@@ -33,14 +33,20 @@ class Item extends Component {
       this.setState({
         city
       })
+      this.handleReset();
     })
     .catch( error => {
       console.log( error );
     })
   }
 
-  render() {
+  handleReset = () => {
+    this.setState({
+      city: ""
+    })
+  }
 
+  render() {
     return (
       <div className="item">
           <div 

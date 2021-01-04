@@ -1,20 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
-.reg-container {
+.reg-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-#email,
-#password,
 #password-repeat {
-  width: 300px;
+  width: 130px;
 }
 
 button {
   width: 100px;
 }
+

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 import './WeatherDisplay.css';
 
@@ -17,18 +16,15 @@ class WeatherDisplay extends Component {
         <div className="weather-display-items">
           <div className="current-weather-display">
             { moment( newDate ).format( 'dddd' )}
-          </div>
+          </div> 
+          &nbsp;|&nbsp;
           <div className="current-weather-description">
-            { this.props.data.weather[0].description }
+            { this.props.data.weather[ 0 ].description.trim() }
           </div>
         </div>
       </div>
     );
   }
-}
-
-WeatherDisplay.propTypes = {
-  data: PropTypes.object,
 }
 
 export default WeatherDisplay;

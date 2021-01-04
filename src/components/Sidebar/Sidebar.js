@@ -34,6 +34,7 @@ class Sidebar extends Component {
 
   render() {
     
+    
     return (
       <div className="sidebar">
         <h1>Welcome!</h1>
@@ -41,7 +42,7 @@ class Sidebar extends Component {
         <AddList />
         <div className="sidebar-lists-map">
         <h2>Click to display list.</h2>
-          <ul>
+          <ul className="sidebar-ul">
             { this.context.lists.map( ( list, i ) => 
               <li key={ i }>
                 <NavLink to={ `/lists/${ list.id }` }> 
@@ -57,7 +58,8 @@ class Sidebar extends Component {
           </ul>
         </div>
         <br />
-        <ListPage 
+        <ListPage
+          history={ this.props.history } 
           cities={ this.props.cities }
         />
       </div>

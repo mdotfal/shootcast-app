@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './components/Home/Home';
+import Footer from './components/Footer/Footer';
 import Landing from './components/Landing/Landing';
 import Registration from './components/Registration/Registration';
-import './App.css';
 import config from './config';
 import AppContext from './AppContext';
+import './App.css';
 
 const users = [
   { 
@@ -24,7 +25,7 @@ class App extends Component {
   state = {
     cities: [],
     lists: [],
-    authedUser: true,
+    authedUser: false,
     users,
     response: {},
   };
@@ -34,6 +35,8 @@ class App extends Component {
     const url = config.API_ENDPOINT;
     const listsObj = `${ url }/api/lists`;
     const citiesObj = `${ url }/api/cities`;
+
+    // Fetch calls to shootcast-api
 
     Promise.all([
       fetch( listsObj ),
@@ -90,6 +93,12 @@ class App extends Component {
     })
   }
 
+  handleGuestLogin = () => {
+    this.setState({
+      authedUser: true
+    })
+  }
+
   handleLogin = ( username, password ) => {
     const user = this.state.users.find( item => item.username.toLowerCase() === username.toLowerCase() );
     if( user && user.password === password ) {
@@ -133,6 +142,7 @@ class App extends Component {
       onSignOut: this.handleSignOut,
       onAddList: this.handleAddList,
       onDeleteList: this.handleDeleteList,
+      onGuestLogin: this.handleGuestLogin,
     }
 
     return (
@@ -168,6 +178,7 @@ class App extends Component {
               </Switch>
             </BrowserRouter>
           </div>
+          <Footer />
         </main>
       </AppContext.Provider>
     );

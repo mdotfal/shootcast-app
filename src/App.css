@@ -9,13 +9,23 @@ body {
 }
 
 .container {
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   height: 100%;
   width: 100vw;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   left: 0;
-  overflow: auto;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  color: black;
+  background-color: white;
+  text-align: center;
 }
