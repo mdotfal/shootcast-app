@@ -8,6 +8,7 @@ const AppContext = React.createContext({
   onAddList: () => {},
   onDeleteList: () => {},
   onSignOut: () => {},
+  onGuestLogin: () => {},
 })
 
 export default AppContext;

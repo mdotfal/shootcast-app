@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
+
+.addcity-form {
+  font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+input {
+  margin: 2px;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+fieldset {
+  border-radius: 20px;
+}

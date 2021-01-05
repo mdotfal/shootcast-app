@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AppContext from '../../AppContext';
 import config from '../../config';
+import './AddCity.css';
 
 class AddCity extends Component {
 
@@ -31,26 +33,38 @@ class AddCity extends Component {
     return (
       <div className="addcity">
         <form className="addcity-form" onSubmit={ this.onSubmit }>
-          <p>Add a City to your List</p>
-          <label htmlFor="search"></label>
-          <input type="text" placeholder="Enter City" name="search" id="search" required />
-  
-          <label htmlFor=""></label>
-          <select id="listId" name="listId">
-            { this.context.lists.map( ( list, i ) => 
-              <option
+          <fieldset>
+            <legend>
+              <label htmlFor="search">
+                <p>Add a City to your List</p>
+              </label>
+            </legend>
+            <input type="text" placeholder="Enter City" name="search" id="search" required />
+            <label htmlFor="listId">
+              <p>Select a list.</p>
+            </label>
+            <select id="listId" name="listId">
+              <option>Choose List</option>
+              { this.context.lists.map( ( list, i ) => 
+                <option
                 key={ i }
                 value={ list.id }
-              >{ list.name }</option> 
-            )}
-          </select>
-            <button
-              type="submit"
-            >Add City</button>
-          </form>
+                >{ list.name }</option> 
+                )}
+            </select>
+              <button
+                type="submit"
+                >Add City</button>
+          </fieldset>
+        </form>
       </div>
     );
   };
 };
+
+AddCity.propTypes = {
+  lists: PropTypes.array,
+}
+
 
 export default AddCity;

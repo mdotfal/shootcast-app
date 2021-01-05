@@ -1,9 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
+
+/* List Styles */
 
 .list {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  max-width: 400px;
+}
+
+.list-cities {
+  display: inline;
+}
+
+.list-cities ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  color:black;
+  height: 55px;
+  width: 400px;
+  overflow: auto;
+}
+
+.list-cities li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
   text-align: center;
-  margin: 0 50px;
-  border: 1px solid orange;
-  
+  background: #F6EDE7;
+  box-shadow: 0 1px 2px 0;
+  border-radius: 25px;
+  margin: 5px 5px 10px 5px;
+  width: 150px;
+}
+
+.list-cities p {
+  margin-bottom: 15px;
+}
+
+/* Item Styles */
+
+.item {
+  height: 30px;
+  width: 100px;
 }
 
 .city-item {
@@ -11,51 +51,41 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
+  height: 30px;
 }
 
-.list-cities li {
-  flex-direction: row;
+.city-name {
+  display: flex;
   justify-content: center;
-  padding: 10px 0;
-  border: 1px solid red;
-  margin: 2px;
-  width: 150px;
+  align-items: center;
 }
+
+/* Button Styles */
 
 button {
-  margin-right: 10px;
+  margin: 10px;
   width: 20px;
+  border-radius: 25px;
+  border: 0;
+  padding: 5px;
 }
 
 .btn {
-  border-radius: 40%;
-  margin-left: 5px;
+  border-radius: 50%;
+  padding: 1px;
+  margin: 10px 5px 10px 15px;
   width: 20px;
 }
 
-.list-cities {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.list-cities ul {
-  flex-direction: row;
-  list-style-type: none;
-  color:black;
-  width: 225px;
-}
+/* Miscellaneous */
 
 .list-forecast {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.forecast-items {
-  display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }
 
 .addcity-form {
@@ -63,5 +93,47 @@ button {
 }
 
 .weather-display {
+  text-align: center;
   padding: 5px;
+}
+
+.forecast-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  margin-left: 40px;
+  height: 400px;
+}
+
+.weather-display-items {
+  margin-left: 10px;
+}
+
+@media all and ( min-width: 600px ) {
+
+  .sidebar-home {
+    width: 800px;
+  }
+
+  .list {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list-cities {
+    min-height: 150px;
+    margin-bottom: 50px;
+  }
+  
+  .list-cities ul {
+    display: flex;
+    flex-flow: row wrap;
+    width: 700px;
+    overflow: visible;
+  }
+
 }

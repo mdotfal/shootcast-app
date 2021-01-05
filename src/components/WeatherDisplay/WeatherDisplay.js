@@ -12,13 +12,16 @@ class WeatherDisplay extends Component {
 
     return (
       <div className='weather-display'>
-        <div className="current-weather-display">
-          { moment( newDate ).format( 'dddd' )}
-        </div>
-        <div className="current-weather-description">
-          { this.props.data.weather[0].description }
-        </div>
         <h2>{ Math.round( this.props.data.main.temp )}°F</h2>
+        <div className="weather-display-items">
+          <div className="current-weather-display">
+            { moment( newDate ).format( 'dddd' )}
+          </div> 
+          &nbsp;|&nbsp;
+          <div className="current-weather-description">
+            { this.props.data.weather[ 0 ].description.trim() }
+          </div>
+        </div>
       </div>
     );
   }

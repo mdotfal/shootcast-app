@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListPage component renders without errors 1`] = `
+<div
+  className="list"
+>
+  <AddCity />
+  <div
+    className="list-cities"
+  >
+    <p>
+      ⇦ Click a city to view Weather ⇨
+    </p>
+    <ul>
+      <li
+        key="0"
+      >
+        <Item
+          city={
+            Object {
+              "list_id": 1,
+              "name": "San Francisco",
+            }
+          }
+          getNameOnClick={[Function]}
+          value="San Francisco"
+        />
+      </li>
+      <li
+        key="1"
+      >
+        <Item
+          city={
+            Object {
+              "list_id": 2,
+              "name": "Castro Valley",
+            }
+          }
+          getNameOnClick={[Function]}
+          value="Castro Valley"
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    className="list-forecast"
+  >
+    <div
+      className="city-name"
+    >
+      <CurrentWeather
+        wData={Array []}
+      />
+    </div>
+    <div
+      className="forecast-items"
+    >
+      <div
+        className="forecast-welcome"
+      >
+        <h2>
+          Welcome to ShootCast!
+        </h2>
+        <p>
+          Click a city to get weather!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

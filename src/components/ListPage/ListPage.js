@@ -3,9 +3,10 @@ import AddCity from '../AddCity/AddCity';
 import CurrentWeather from '../CurrentWeather/CurrentWeather';
 import Item from '../Item/Item';
 import WeatherDisplay from '../WeatherDisplay/WeatherDisplay';
-import './ListPage.css';
 import config from '../../config';
 import AppContext from '../../AppContext';
+import PropTypes from 'prop-types';
+import './ListPage.css';
 class ListPage extends Component {
 
   static contextType = AppContext;
@@ -21,6 +22,8 @@ class ListPage extends Component {
        this.fetchWeather( this.state.city );
     }
   }
+
+  // Main FETCH calls for Weather API
 
   fetchWeather = () => {
     const city = !undefined ? this.state.city : "San Bruno";
@@ -54,24 +57,26 @@ class ListPage extends Component {
     .catch( err => err.message );
   }
 
+  // Map WeatherDisplay Component
   formatForecast = () => {
     return this.state.forecastData.map( ( data, i ) => 
       <WeatherDisplay data={ data } key={ i } /> 
     )
   }
 
+  // Grabs cityName and adds it to state for onClick Weather fetch call
   getNameOnClick = ( cityName ) => {
     this.setState({ city: cityName });
   }
 
   render() {
+   
     return (
       <div className="list">
         <AddCity />
-        <br />
         <div className="list-cities">
+          <p>&#8678; Click a city to view Weather &#8680;</p>
           <ul>
-            <p>Click a city to view Weather</p>
 
             { this.props.cities.map( (city , i ) =>
               <li key={ i }>
@@ -80,30 +85,38 @@ class ListPage extends Component {
                   value={ city.name }
                   city={ city }
                   getNameOnClick={ this.getNameOnClick }
+                  history={ this.props.history }
                 />
               </li>
               )}
           </ul>
-          <div className="list-forecast">
+        </div>
+        <div className="list-forecast">
 
-            {/*  This is Weather Display */}
-            <div className="city-name">
-              <CurrentWeather 
-                wData={ this.state.weatherData } 
-              />
-            </div>
-            <div className="forecast-items">
-              
-              { this.state.city !== "" 
-                ? this.formatForecast()
-                : "Welcome to ShootCast!  Click a city to begin!" 
-              }
-            </div>
+          {/*  This is Weather Display */}
+          <div className="city-name">
+            <CurrentWeather 
+              wData={ this.state.weatherData } 
+            />
+          </div>
+          <div className="forecast-items">
+            
+            { this.state.city !== "" 
+              ? this.formatForecast()
+              : <div className="forecast-welcome">
+                  <h2>Welcome to ShootCast!</h2>
+                  <p>Click a city to get weather!</p>
+                </div>
+            }
           </div>
         </div>
      </div>
     );
   }
 };
+
+ListPage.propTypes = {
+  cities: PropTypes.array,
+}
 
 export default ListPage;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component renders without errors 1`] = `
+<div
+  className="main"
+>
+  <Nav />
+  <div
+    className="main-home"
+  >
+    <div
+      className="sidebar-home"
+    >
+      <Sidebar />
+    </div>
+  </div>
+</div>
+`;

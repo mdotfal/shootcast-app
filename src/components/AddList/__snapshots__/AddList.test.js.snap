@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddList component renders without errors 1`] = `
+<div
+  className="addlist"
+>
+  <form
+    className="addlist-form"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="inputList"
+    >
+      *
+    </label>
+    <input
+      id="inputList"
+      name="inputList"
+      placeholder="Southern California"
+      required={true}
+      type="text"
+    />
+    <button
+      type="submit"
+    >
+      Add List
+    </button>
+  </form>
+</div>
+`;
