@@ -30,6 +30,7 @@
     "prebuild": "react-scripts test",
     "build": "react-scripts build",
     "test": "CI=true react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
     "deploy": "yarn vercel"
