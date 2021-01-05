@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherDisplay component renders without errors 1`] = `
+<div
+  className="weather-display"
+>
+  <h2>
+    50
+    °F
+  </h2>
+  <div
+    className="weather-display-items"
+  >
+    <div
+      className="current-weather-display"
+    >
+      Invalid date
+    </div>
+     | 
+    <div
+      className="current-weather-description"
+    >
+      Test Description
+    </div>
+  </div>
+</div>
+`;

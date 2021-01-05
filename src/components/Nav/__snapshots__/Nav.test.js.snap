@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav component renders without errors 1`] = `
+<div
+  className="nav"
+>
+  <div
+    className="nav-logo"
+  >
+    ShootCast
+  </div>
+  <div
+    className="nav-links"
+  >
+    <Link
+      to="/home"
+    >
+      Home
+    </Link>
+    <Link
+      to="/"
+    >
+      Sign Out
+    </Link>
+  </div>
+</div>
+`;

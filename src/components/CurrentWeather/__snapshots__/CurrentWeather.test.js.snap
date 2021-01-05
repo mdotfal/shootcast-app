@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentWeather component renders without errors 1`] = `
+<div
+  className="current-weather"
+>
+  <div>
+    <h1>
+      NaN
+      °F
+    </h1>
+    <p>
+      test description
+    </p>
+    <p>
+       Sunset: 
+      2:17:36 AM
+    </p>
+  </div>
+</div>
+`;

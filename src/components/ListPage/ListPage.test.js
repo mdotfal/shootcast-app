@@ -1,18 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Home from './Home';
+import ListPage from './ListPage';
 
-describe( `Home component`, () => {
+describe( `ListPage component`, () => {
   it( `renders without errors`, () => {
-    const defaultProps = {
-      match: { params: { list_id: 1 }}
-    }
     const cities = [
       { name: "San Francisco", list_id: 1 },
       { name: "Castro Valley", list_id: 2 }
     ]
-    const wrapper = shallow( <Home { ...defaultProps } { ...cities }/> )
+    const wrapper = shallow( <ListPage cities={ cities } /> )
     expect( toJson( wrapper )).toMatchSnapshot()
   })
 })

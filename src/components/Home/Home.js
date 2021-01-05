@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Nav from '../Nav/Nav';
 import Sidebar from '../Sidebar/Sidebar';
 import AppContext from '../../AppContext';
-import Footer from '../Footer/Footer';
 import './Home.css';
 
 class Home extends Component {

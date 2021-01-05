@@ -10,52 +10,72 @@ exports[`Landing Component should render 1`] = `
   <p>
     In a world of varying climates and back-to-back creative shoots, a way to keep in the know of current weather situations is a must.
   </p>
+  <br />
   <p>
-    ShootCast is an app that will help you do so and create custom lists of cities to see the weather conditions with the click of a mouse.
+    ShootCast is a mobile app that will help you do so and create custom lists of cities to see the weather conditions with the click of a mouse.
   </p>
+  <br />
   <p>
     Find out the current weather forecast and plan your shoot correctly.
   </p>
   <form
     onSubmit={[Function]}
   >
-    <div
-      className="landing-container"
-    >
-      <label
-        htmlFor="username"
+    <fieldset>
+      <div
+        className="landing-container"
       >
-        <b>
-          Username
-        </b>
-      </label>
-      <input
-        name="username"
-        onChange={[Function]}
-        placeholder="Enter Username"
-        required={true}
-        type="text"
-      />
-      <label
-        htmlFor="password"
-      >
-        <b>
-          Password
-        </b>
-      </label>
-      <input
-        name="password"
-        onChange={[Function]}
-        placeholder="Enter Password"
-        required={true}
-        type="password"
-      />
-      <button
-        type="submit"
-      >
-        Login
-      </button>
-    </div>
+        <label
+          htmlFor="username"
+        >
+          <b>
+            Username
+          </b>
+        </label>
+        <input
+          id="username"
+          name="username"
+          onChange={[Function]}
+          placeholder="Enter Username"
+          required={true}
+          type="text"
+        />
+        <label
+          htmlFor="password"
+        >
+          <b>
+            Password
+          </b>
+        </label>
+        <input
+          id="password"
+          name="password"
+          onChange={[Function]}
+          placeholder="Enter Password"
+          required={true}
+          type="password"
+        />
+        <div
+          className="landing-buttons"
+        >
+          <button
+            type="submit"
+          >
+            Login
+          </button>
+          <a
+            href="/home"
+            onClick={[Function]}
+          >
+            <button
+              onClick={[Function]}
+            >
+              Guest Login
+            </button>
+          </a>
+        </div>
+      </div>
+    </fieldset>
   </form>
   or
   <br />

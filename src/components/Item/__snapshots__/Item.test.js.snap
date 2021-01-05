@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component renders without errors 1`] = `
+<div
+  className="item"
+>
+  <div
+    className="city-item"
+    onClick={[Function]}
+  >
+    San Francisco
+    <button
+      className="btn"
+      onClick={[Function]}
+      type="button"
+    >
+      x
+    </button>
+  </div>
+</div>
+`;

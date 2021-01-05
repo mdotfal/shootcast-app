@@ -2,6 +2,7 @@
 
 exports[`Registration Component should render 1`] = `
 <form
+  className="reg-form"
   onSubmit={[Function]}
 >
   <fieldset>
@@ -29,6 +30,7 @@ exports[`Registration Component should render 1`] = `
         required={true}
         type="text"
       />
+      <br />
       <label
         htmlFor="password"
       >
@@ -44,6 +46,7 @@ exports[`Registration Component should render 1`] = `
         required={true}
         type="password"
       />
+      <br />
       <label
         htmlFor="password-repeat"
       >
@@ -59,6 +62,7 @@ exports[`Registration Component should render 1`] = `
         required={true}
         type="password"
       />
+      <br />
       <button
         className="registerbtn"
         type="submit"
