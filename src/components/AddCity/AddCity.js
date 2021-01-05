@@ -43,8 +43,8 @@ class AddCity extends Component {
             <label htmlFor="listId">
               <p>Select a list.</p>
             </label>
-            <select id="listId" name="listId" value="Select List">
-              <option value="">Choose List</option>
+            <select id="listId" name="listId">
+              <option>Choose List</option>
               { this.context.lists.map( ( list, i ) => 
                 <option
                 key={ i }
