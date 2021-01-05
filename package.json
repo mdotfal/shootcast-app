@@ -29,8 +29,7 @@
     "start": "react-scripts start",
     "prebuild": "react-scripts test",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage",
+    "test": "CI=true react-scripts test --env=jsdom --forceExit --detectOpenHandles",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
     "deploy": "yarn vercel"
