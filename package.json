@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "cross-env": "^7.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
@@ -27,9 +28,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "react-scripts test",
+    "prebuild": "react-scripts test --watchAll=false",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --env=jsdom --forceExit --detectOpenHandles",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
     "deploy": "yarn vercel"
