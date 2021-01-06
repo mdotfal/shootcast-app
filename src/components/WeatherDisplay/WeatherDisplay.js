@@ -4,6 +4,15 @@ import './WeatherDisplay.css';
 
 class WeatherDisplay extends Component {
 
+  static defaultProps = {
+    data: {
+      main: '',
+      weather: [
+        { description: '' }
+      ],
+    }
+  }
+
   render() {
 
     const newDate = new Date();

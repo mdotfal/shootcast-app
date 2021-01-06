@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListPage component renders without errors 1`] = `
+exports[`ListPage component renders with cities 1`] = `
 <div
   className="list"
 >
@@ -49,23 +49,44 @@ exports[`ListPage component renders without errors 1`] = `
       className="city-name"
     >
       <CurrentWeather
+        city=""
         wData={Array []}
       />
     </div>
     <div
       className="forecast-items"
+    />
+  </div>
+</div>
+`;
+
+exports[`ListPage component renders without cities 1`] = `
+<div
+  className="list"
+>
+  <AddCity />
+  <div
+    className="list-cities"
+  >
+    <p>
+      ⇦ Click a city to view Weather ⇨
+    </p>
+    <ul />
+  </div>
+  <div
+    className="list-forecast"
+  >
+    <div
+      className="city-name"
     >
-      <div
-        className="forecast-welcome"
-      >
-        <h2>
-          Welcome to ShootCast!
-        </h2>
-        <p>
-          Click a city to get weather!
-        </p>
-      </div>
+      <CurrentWeather
+        city=""
+        wData={Array []}
+      />
     </div>
+    <div
+      className="forecast-items"
+    />
   </div>
 </div>
 `;

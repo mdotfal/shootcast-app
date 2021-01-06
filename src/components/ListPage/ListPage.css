@@ -10,6 +10,7 @@
 
 .list-cities {
   display: inline;
+  min-height: 500px;
 }
 
 .list-cities ul {
@@ -85,7 +86,7 @@ button {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0;
+  margin-top: 130px;
 }
 
 .addcity-form {
@@ -102,6 +103,7 @@ button {
   flex-direction: column;
   justify-content: center;
   overflow: auto;
+  margin-top: 20px;
   margin-left: 40px;
   height: 400px;
 }

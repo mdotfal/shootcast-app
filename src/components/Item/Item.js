@@ -4,10 +4,17 @@ import config from '../../config';
 
 class Item extends Component {
 
+  static defaultProps = {
+    city: {
+      name: "",
+    }
+  }
+
   static contextType = AppContext;
 
   state = {
     city: "",
+    isFocused: false,
   }
 
   onClick = () => {
@@ -49,7 +56,7 @@ class Item extends Component {
   render() {
     return (
       <div className="item">
-          <div 
+          <div
             className="city-item"
             onClick={ e => {
               e.stopPropagation();

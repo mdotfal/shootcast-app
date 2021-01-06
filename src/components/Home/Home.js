@@ -7,6 +7,16 @@ import './Home.css';
 
 class Home extends Component {
 
+  static defaultProps = {
+    cities: [],
+    lists: [],
+    match: {
+      params: {
+        listId: "",
+      }
+    }
+  }
+
 
   static contextType = AppContext;
 

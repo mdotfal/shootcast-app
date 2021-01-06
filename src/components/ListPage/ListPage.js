@@ -15,6 +15,8 @@ class ListPage extends Component {
     forecastData: [],
     weatherData: [],
     city: "",
+    background: "",
+    isError: false,
   }
 
   componentDidUpdate = ( prevProps, prevState ) => {
@@ -50,11 +52,17 @@ class ListPage extends Component {
     .then( ([ forecastData, weatherData ]) => {
       const forecast = forecastData.list.filter( fData => fData.dt_txt.includes("18:00:00") );
       this.setState({
+        isError: false,
         forecastData: forecast,
         weatherData,
       })
     })
-    .catch( err => err.message );
+    .catch( err => {
+      this.setState({
+        isError: true
+      })
+    });
+    
   }
 
   // Map WeatherDisplay Component
@@ -70,7 +78,6 @@ class ListPage extends Component {
   }
 
   render() {
-    console.log( this.state.city )
     return (
       <div className="list">
         <AddCity />
@@ -79,37 +86,42 @@ class ListPage extends Component {
           <ul>
 
             { this.props.cities.map( (city , i ) =>
-              <li key={ i }>
-                <Item
-                  id={ city.id }
-                  value={ city.name }
-                  city={ city }
-                  getNameOnClick={ this.getNameOnClick }
-                  history={ this.props.history }
-                />
-              </li>
-              )}
+                <li key={ i }>
+                  <Item
+                    id={ city.id }
+                    value={ city.name }
+                    city={ city }
+                    getNameOnClick={ this.getNameOnClick }
+                    history={ this.props.history }
+                  />
+                </li>)
+            }
           </ul>
         </div>
         <div className="list-forecast">
 
           {/*  This is Weather Display */}
           <div className="city-name">
-            
-            <CurrentWeather 
-              wData={ this.state.weatherData }
-              city={ this.state.city } 
-            />
+            {
+              this.state.isError === true
+                ? ""
+                : <CurrentWeather 
+                    wData={ this.state.weatherData }
+                    city={ this.state.city } 
+                  />
+            }
           </div>
           <div className="forecast-items">
             
-            { this.state.city !== "" 
-              ? this.formatForecast()
-              : <div className="forecast-welcome">
-                  <h2>Welcome to ShootCast!</h2>
-                  <p>Click a city to get weather!</p>
+            {  }
+            { this.state.isError === false && this.state.forecastData !== []
+                ? this.formatForecast()
+                : <div className="forecast-welcome">
+                  <h3 style={{ color: 'red' }}>City not found!</h3>
+                  <p>Check spelling and add a new city!</p>
                 </div>
             }
+            
           </div>
         </div>
      </div>
