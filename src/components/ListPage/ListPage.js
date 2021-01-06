@@ -70,7 +70,7 @@ class ListPage extends Component {
   }
 
   render() {
-   
+    console.log( this.state.city )
     return (
       <div className="list">
         <AddCity />
@@ -95,8 +95,10 @@ class ListPage extends Component {
 
           {/*  This is Weather Display */}
           <div className="city-name">
+            
             <CurrentWeather 
-              wData={ this.state.weatherData } 
+              wData={ this.state.weatherData }
+              city={ this.state.city } 
             />
           </div>
           <div className="forecast-items">
