@@ -4,7 +4,13 @@ exports[`ListPage component renders with cities 1`] = `
 <div
   className="list"
 >
-  <AddCity />
+  <AddCity
+    context={
+      Object {
+        "lists": Array [],
+      }
+    }
+  />
   <div
     className="list-cities"
   >
@@ -64,7 +70,13 @@ exports[`ListPage component renders without cities 1`] = `
 <div
   className="list"
 >
-  <AddCity />
+  <AddCity
+    context={
+      Object {
+        "lists": Array [],
+      }
+    }
+  />
   <div
     className="list-cities"
   >

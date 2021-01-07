@@ -17,7 +17,6 @@ class Home extends Component {
     }
   }
 
-
   static contextType = AppContext;
 
   render() {

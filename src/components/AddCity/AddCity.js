@@ -6,6 +6,12 @@ import './AddCity.css';
 
 class AddCity extends Component {
 
+  static defaultProps = {
+    context: {
+      lists: []
+    }
+  }
+
   static contextType = AppContext;
 
   onSubmit = e => {
