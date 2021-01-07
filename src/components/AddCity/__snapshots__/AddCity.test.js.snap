@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCity component renders without errors 1`] = `
+<AddCity
+  context={
+    Object {
+      "lists": Array [],
+    }
+  }
+/>
+`;

@@ -16,19 +16,19 @@ class Landing extends Component {
   onUserChange = e => {
     this.setState({
       username: e.target.value
-    })
+    });
   }
 
   onPassChange = e => {
     this.setState({
       password: e.target.value
-    })
+    });
   }
 
   onClick = e => {
     this.setState({
       authedUser: true
-    })
+    });
   }
 
   onSubmit = e => {
@@ -37,7 +37,7 @@ class Landing extends Component {
     if( !result ) {
       this.setState({
         isError: true,
-      })
+      });
     }
   }
 
@@ -88,7 +88,6 @@ class Landing extends Component {
         
       </div>
     );
-    
   }
 }
 

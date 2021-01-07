@@ -29,7 +29,7 @@ class Sidebar extends Component {
     })
     .catch( error => {
       console.log( error );
-    })
+    });
   }
 
   render() {
@@ -70,6 +70,6 @@ class Sidebar extends Component {
 Sidebar.propTypes = {
   lists: PropTypes.array,
   cities: PropTypes.array,
-}
+};
 
 export default Sidebar;

@@ -6,6 +6,12 @@ import './AddCity.css';
 
 class AddCity extends Component {
 
+  static defaultProps = {
+    context: {
+      lists: []
+    }
+  }
+
   static contextType = AppContext;
 
   onSubmit = e => {
@@ -13,7 +19,7 @@ class AddCity extends Component {
     const newCity = {
       name: e.target.search.value,
       list_id: e.target.listId.value
-    }
+    };
     fetch( `${ config.API_ENDPOINT }/api/cities`, {
       method: 'POST',
       headers: {
@@ -26,7 +32,9 @@ class AddCity extends Component {
       this.context.onAddCity( data );
       e.target.search.value = '';
     })
-    .catch( error => { console.log( error )})
+    .catch( error => { 
+      console.log( error ); 
+    });
   }
 
   render() {
@@ -39,7 +47,7 @@ class AddCity extends Component {
                 <p>Add a City to your List</p>
               </label>
             </legend>
-            <input type="text" placeholder="Enter City" name="search" id="search" required />
+            <input type="text" placeholder="City or Zip Code" name="search" id="search" required />
             <label htmlFor="listId">
               <p>Select a list.</p>
             </label>
@@ -64,7 +72,7 @@ class AddCity extends Component {
 
 AddCity.propTypes = {
   lists: PropTypes.array,
-}
+};
 
 
 export default AddCity;

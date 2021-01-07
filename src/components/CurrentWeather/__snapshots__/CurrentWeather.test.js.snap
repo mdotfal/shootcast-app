@@ -5,6 +5,9 @@ exports[`CurrentWeather component renders without errors 1`] = `
   className="current-weather"
 >
   <div>
+    <p>
+      <strong />
+    </p>
     <h1>
       NaN
       °F
@@ -12,9 +15,25 @@ exports[`CurrentWeather component renders without errors 1`] = `
     <p>
       test description
     </p>
-    <p>
+    <p
+      style={
+        Object {
+          "color": "rgb(255, 181, 43)",
+        }
+      }
+    >
        Sunset: 
       2:17:36 AM
+    </p>
+    <p
+      style={
+        Object {
+          "color": "rgb(150, 72, 0)",
+        }
+      }
+    >
+       Goldenhour: 
+      1:17:36 AM
     </p>
   </div>
 </div>

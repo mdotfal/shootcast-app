@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item component renders without errors 1`] = `
+exports[`Item component renders with params 1`] = `
 <div
   className="item"
 >

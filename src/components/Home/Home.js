@@ -7,14 +7,25 @@ import './Home.css';
 
 class Home extends Component {
 
+  static defaultProps = {
+    cities: [],
+    lists: [],
+    match: {
+      params: {
+        listId: "",
+      }
+    }
+  }
 
   static contextType = AppContext;
 
   render() {
-    let listId = parseInt( this.props.match.params.listId )
+
+    // filters cities array based on which list_id is selected
+    let listId = parseInt( this.props.match.params.listId );
     const cities = !listId 
       ? this.context.cities 
-      : this.context.cities.filter( item => item.list_id === listId )
+      : this.context.cities.filter( item => item.list_id === listId );
     
     return (
       <div className="main">
@@ -34,6 +45,6 @@ class Home extends Component {
 
 Home.propTypes = {
   cities: PropTypes.array
-}
+};
 
 export default Home;

@@ -1,17 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home component renders without errors 1`] = `
+exports[`Home component renders the UI as expected 1`] = `
 <div
   className="main"
 >
-  <Nav />
+  <div
+    className="nav"
+  >
+    <div
+      className="nav-logo"
+    >
+      ShootCast
+    </div>
+    <div
+      className="nav-links"
+    >
+      <a
+        href="/home"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Sign Out
+      </a>
+    </div>
+  </div>
   <div
     className="main-home"
   >
     <div
       className="sidebar-home"
     >
-      <Sidebar />
+      <div
+        className="sidebar"
+      >
+        <h1>
+          Welcome!
+        </h1>
+        <p>
+          ShootCast is an app where you can create custom lists of cities to view the current weather and forecast for any given city.
+        </p>
+        <div
+          className="addlist"
+        >
+          <form
+            className="addlist-form"
+            onSubmit={[Function]}
+          >
+            <label
+              htmlFor="inputList"
+            >
+              *
+            </label>
+            <input
+              id="inputList"
+              name="inputList"
+              placeholder="Southern California"
+              required={true}
+              type="text"
+            />
+            <button
+              type="submit"
+            >
+              Add List
+            </button>
+          </form>
+        </div>
+        <div
+          className="sidebar-lists-map"
+        >
+          <h2>
+            Click to display list.
+          </h2>
+          <ul
+            className="sidebar-ul"
+          />
+        </div>
+        <br />
+        <div
+          className="list"
+        >
+          <div
+            className="addcity"
+          >
+            <form
+              className="addcity-form"
+              onSubmit={[Function]}
+            >
+              <fieldset>
+                <legend>
+                  <label
+                    htmlFor="search"
+                  >
+                    <p>
+                      Add a City to your List
+                    </p>
+                  </label>
+                </legend>
+                <input
+                  id="search"
+                  name="search"
+                  placeholder="Enter City"
+                  required={true}
+                  type="text"
+                />
+                <label
+                  htmlFor="listId"
+                >
+                  <p>
+                    Select a list.
+                  </p>
+                </label>
+                <select
+                  id="listId"
+                  name="listId"
+                >
+                  <option>
+                    Choose List
+                  </option>
+                </select>
+                <button
+                  type="submit"
+                >
+                  Add City
+                </button>
+              </fieldset>
+            </form>
+          </div>
+          <div
+            className="list-cities"
+          >
+            <p>
+              ⇦ Click a city to view Weather ⇨
+            </p>
+            <ul />
+          </div>
+          <div
+            className="list-forecast"
+          >
+            <div
+              className="city-name"
+            >
+              <div
+                className="current-weather"
+              >
+                <h1>
+                   
+                   
+                </h1>
+              </div>
+            </div>
+            <div
+              className="forecast-items"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

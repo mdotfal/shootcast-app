@@ -15,19 +15,19 @@ class Registration extends Component {
   onUsernameChange = e => {
     this.setState({
       username: e.target.value
-    })
+    });
   }
 
   onPasswordChange = e => {
     this.setState({
       password: e.target.value
-    })
+    });
   }
 
   onRepeatPasswordChange = e => {
     this.setState({
       repeatPassword: e.target.value
-    })
+    });
   }
 
   onSubmit = e => {
@@ -35,18 +35,18 @@ class Registration extends Component {
     if( this.state.password !== this.state.repeatPassword ) {
       return this.setState({
         isError: "Passwords do not match!"
-      })
+      });
     };
     const result =  this.props.handleRegistration( this.state.username, this.state.password);
     if( !result ) {
       return this.setState({
         isError: 'Username already taken!'
-      })
+      });
     } else {
       this.setState({
         isSuccess: true,
         isError: false
-      })
+      });
     }
   }
 
