@@ -47,7 +47,7 @@ class AddCity extends Component {
                 <p>Add a City to your List</p>
               </label>
             </legend>
-            <input type="text" placeholder="Enter City" name="search" id="search" required />
+            <input type="text" placeholder="City or Zip Code" name="search" id="search" required />
             <label htmlFor="listId">
               <p>Select a list.</p>
             </label>

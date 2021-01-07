@@ -3,6 +3,7 @@ import './CurrentWeather.css';
 
 function CurrentWeather( props ) {
 
+  // Calculates sunset from UNIX timestamp
   const sunset = ( stamp ) => {
     const timeFormat = new Intl.DateTimeFormat( 'en-US', {
       timeStyle: 'medium',

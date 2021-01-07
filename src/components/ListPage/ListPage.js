@@ -19,6 +19,7 @@ class ListPage extends Component {
     isError: false,
   }
 
+  // Checks to see if the previous state isn't equal to the new state set by getNameOnClick to retrigger the fetchWeather.  componentDidUpdate was used as a method to rerender component on state change.
   componentDidUpdate = ( prevProps, prevState ) => {
     if( prevState.city !== this.state.city ) {
        this.fetchWeather( this.state.city );
@@ -78,6 +79,7 @@ class ListPage extends Component {
   }
 
   render() {
+    // console.log( baseState )
     return (
       <div className="list">
         <AddCity />
@@ -85,6 +87,7 @@ class ListPage extends Component {
           <p>&#8678; Click a city to view Weather &#8680;</p>
           <ul>
 
+             {/* Maps filtered cities prop passed from Home -> Sidebar -> ListPage */}
             { this.props.cities.map( (city , i ) =>
                 <li key={ i }>
                   <Item
@@ -102,6 +105,8 @@ class ListPage extends Component {
 
           {/*  This is Weather Display */}
           <div className="city-name">
+            
+            {/* If isError is true then display nothing.  If false render CurrentWeather */}
             {
               this.state.isError === true
                 ? ""
@@ -113,12 +118,13 @@ class ListPage extends Component {
           </div>
           <div className="forecast-items">
             
-            {  }
+            {/* If this isError === false && foreCastData array isn't empty then run formatForecast otherwise display message */}
             { this.state.isError === false && this.state.forecastData !== []
                 ? this.formatForecast()
                 : <div className="forecast-welcome">
                   <h3 style={{ color: 'red' }}>City not found!</h3>
-                  <p>Check spelling and add a new city!</p>
+                  <p>Check spelling or try by zip code.</p>
+                  <p>Currently the OpenWeatherMap does not provide a good way to search by state.</p>
                 </div>
             }
             

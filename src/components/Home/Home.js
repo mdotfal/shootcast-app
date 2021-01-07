@@ -20,6 +20,8 @@ class Home extends Component {
   static contextType = AppContext;
 
   render() {
+
+    // filters cities array based on which list_id is selected
     let listId = parseInt( this.props.match.params.listId );
     const cities = !listId 
       ? this.context.cities 
