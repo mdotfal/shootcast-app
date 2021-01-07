@@ -20,7 +20,7 @@ function CurrentWeather( props ) {
               <p><strong>{ props.city }</strong></p>
               <h1>{ Math.round( props.wData.main.temp ) }°F</h1>
               <p>{ props.wData.weather[0].description }</p>
-              <p style={{ color: `rgb(255, 181, 43)` }}> Sunset: { sunset( props.wData.sys.sunset ) }</p>
+              <p style={{ color: '#4A4A4A' }}> Sunset: { sunset( props.wData.sys.sunset ) }</p>
               <p style={{ color: `rgb(150, 72, 0)` }}> Goldenhour: { sunset( props.wData.sys.sunset - 3600 )}</p>
             </div>
           : <h1> { name } </h1>
