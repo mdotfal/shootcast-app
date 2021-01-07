@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AppContext from '../../AppContext';
 import config from '../../config';
-
 class Item extends Component {
 
   static defaultProps = {
@@ -39,18 +38,18 @@ class Item extends Component {
       this.context.onDeleteCity( itemId );
       this.setState({
         city
-      })
+      });
       this.handleReset();
     })
     .catch( error => {
       console.log( error );
-    })
+    });
   }
 
   handleReset = () => {
     this.setState({
       city: ""
-    })
+    });
   }
 
   render() {
@@ -60,7 +59,7 @@ class Item extends Component {
             className="city-item"
             onClick={ e => {
               e.stopPropagation();
-              this.onClick( e ) }
+              this.onClick( e ); }
             }
             >
               { this.props.city.name }
@@ -69,7 +68,7 @@ class Item extends Component {
               type="button"
               onClick={ ( e ) => {
                 e.stopPropagation();
-                this.handleDelete( this.props.city.id )}
+                this.handleDelete( this.props.city.id );}
               }
             >x</button>
           </div>

@@ -23,7 +23,9 @@ class AddList extends Component {
       this.context.onAddList( data );
       event.target.inputList.value = '';
     })
-    .catch( error => { console.log( error )})
+    .catch( error => { 
+      console.log( error );
+    });
   }
 
   onSubmit = e => {

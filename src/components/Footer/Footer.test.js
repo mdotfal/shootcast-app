@@ -10,10 +10,10 @@ describe( `Footer component`, () => {
     const div = document.createElement( 'div' );
     ReactDOM.render( <Footer />, div );
     ReactDOM.unmountComponentAtNode( div );
-  })
+  });
 
   it( `renders without errors`, () => {
-    const wrapper = shallow( <Footer /> )
-    expect( toJson( wrapper )).toMatchSnapshot()
-  })
-})
+    const wrapper = shallow( <Footer /> );
+    expect( toJson( wrapper )).toMatchSnapshot();
+  });
+});

@@ -19,7 +19,7 @@ class AddCity extends Component {
     const newCity = {
       name: e.target.search.value,
       list_id: e.target.listId.value
-    }
+    };
     fetch( `${ config.API_ENDPOINT }/api/cities`, {
       method: 'POST',
       headers: {
@@ -32,7 +32,9 @@ class AddCity extends Component {
       this.context.onAddCity( data );
       e.target.search.value = '';
     })
-    .catch( error => { console.log( error )})
+    .catch( error => { 
+      console.log( error ); 
+    });
   }
 
   render() {
@@ -70,7 +72,7 @@ class AddCity extends Component {
 
 AddCity.propTypes = {
   lists: PropTypes.array,
-}
+};
 
 
 export default AddCity;

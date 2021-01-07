@@ -30,9 +30,9 @@ class ListPage extends Component {
   fetchWeather = () => {
     const city = !undefined ? this.state.city : "San Bruno";
     const baseForecast = `https://api.openweathermap.org/data/2.5/forecast?q=`;
-    const baseWeather = `https://api.openweathermap.org/data/2.5/weather?q=`
+    const baseWeather = `https://api.openweathermap.org/data/2.5/weather?q=`;
     const api_key = `${ config.API_KEY }`;
-    const imperial = `&units=imperial`
+    const imperial = `&units=imperial`;
     const forecastUrl = `${ baseForecast }${ city }&appid=${ api_key }${ imperial }`;
     const weatherUrl = `${ baseWeather }${ city }&appid=${ api_key }${ imperial }`;
 
@@ -55,12 +55,12 @@ class ListPage extends Component {
         isError: false,
         forecastData: forecast,
         weatherData,
-      })
+      });
     })
     .catch( err => {
       this.setState({
         isError: true
-      })
+      });
     });
     
   }
@@ -69,7 +69,7 @@ class ListPage extends Component {
   formatForecast = () => {
     return this.state.forecastData.map( ( data, i ) => 
       <WeatherDisplay data={ data } key={ i } /> 
-    )
+    );
   }
 
   // Grabs cityName and adds it to state for onClick Weather fetch call
@@ -131,6 +131,6 @@ class ListPage extends Component {
 
 ListPage.propTypes = {
   cities: PropTypes.array,
-}
+};
 
 export default ListPage;

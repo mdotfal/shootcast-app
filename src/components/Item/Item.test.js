@@ -10,16 +10,16 @@ describe( `Item component`, () => {
     city: {
       name: "San Francisco"
     }
-  }
+  };
 
   it( `renders without crashing`, () => {
     const div = document.createElement( 'div' );
     ReactDOM.render( <Item />, div );
     ReactDOM.unmountComponentAtNode( div );
-  })
+  });
 
   it( `renders with params`, () => {
-    const wrapper = shallow( <Item { ...params }/> )
-    expect( toJson( wrapper )).toMatchSnapshot()
-  })
-})
+    const wrapper = shallow( <Item { ...params }/> );
+    expect( toJson( wrapper )).toMatchSnapshot();
+  });
+});

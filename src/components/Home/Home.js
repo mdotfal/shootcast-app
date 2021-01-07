@@ -20,10 +20,10 @@ class Home extends Component {
   static contextType = AppContext;
 
   render() {
-    let listId = parseInt( this.props.match.params.listId )
+    let listId = parseInt( this.props.match.params.listId );
     const cities = !listId 
       ? this.context.cities 
-      : this.context.cities.filter( item => item.list_id === listId )
+      : this.context.cities.filter( item => item.list_id === listId );
     
     return (
       <div className="main">
@@ -43,6 +43,6 @@ class Home extends Component {
 
 Home.propTypes = {
   cities: PropTypes.array
-}
+};
 
 export default Home;

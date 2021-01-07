@@ -14,7 +14,7 @@ describe( 'Landing Component', () => {
         </BrowserRouter>
       ).toJSON();
     expect( component ).toMatchSnapshot();
-  })
+  });
 
   it( 'renders without crashing', () => {
     const div = document.createElement( 'div' );
@@ -24,6 +24,6 @@ describe( 'Landing Component', () => {
       </BrowserRouter>
       ,div );
     ReactDOM.unmountComponentAtNode( div );
-  })
-})
+  });
+});
 

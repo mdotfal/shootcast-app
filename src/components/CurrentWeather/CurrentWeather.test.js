@@ -16,8 +16,8 @@ describe( `CurrentWeather component`, () => {
       sys: {
         sunset: "123456"
       }
-    }
-    const wrapper = shallow( <CurrentWeather wData = { wData }/> )
-    expect( toJson( wrapper )).toMatchSnapshot()
-  })
-})
+    };
+    const wrapper = shallow( <CurrentWeather wData = { wData }/> );
+    expect( toJson( wrapper )).toMatchSnapshot();
+  });
+});

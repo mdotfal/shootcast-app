@@ -13,16 +13,16 @@ describe.skip( `AddCity component`, () => {
       <AppContext.Provider>
         <AddCity />
       </AppContext.Provider> 
-    , div )
+    , div );
     ReactDOM.unmountComponentAtNode( div );
-  })
+  });
 
   it( `renders without errors`, () => {
     const wrapper = shallow( 
       <AppContext.Provider>
         <AddCity /> 
       </AppContext.Provider>
-    )
-    expect( toJson( wrapper )).toMatchSnapshot()
-  })
-})
+    );
+    expect( toJson( wrapper )).toMatchSnapshot();
+  });
+});

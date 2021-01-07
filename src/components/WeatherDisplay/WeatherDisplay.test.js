@@ -13,22 +13,22 @@ describe( `WeatherDisplay component`, () => {
     weather: [
       { description: "Test Description" }
     ]
-  }
+  };
 
   it( `renders without crashing`, () => {
     const div = document.createElement( 'div' );
     ReactDOM.render( <WeatherDisplay />, div );
     ReactDOM.unmountComponentAtNode( div ); 
-  })
+  });
   
   it( `renders with data`, () => {
-    const wrapper = shallow( <WeatherDisplay data={ data }/> )
-    expect( toJson( wrapper )).toMatchSnapshot()
-  })
+    const wrapper = shallow( <WeatherDisplay data={ data }/> );
+    expect( toJson( wrapper )).toMatchSnapshot();
+  });
 
   it( `renders UI as expected`, () => {
-    const wrapper = shallow( <WeatherDisplay /> )
-    expect( toJson( wrapper )).toMatchSnapshot()
-  })
+    const wrapper = shallow( <WeatherDisplay /> );
+    expect( toJson( wrapper )).toMatchSnapshot();
+  });
 
-})
+});

@@ -8,8 +8,8 @@ function CurrentWeather( props ) {
       timeStyle: 'medium',
       timeZone: 'America/Los_Angeles'
     });
-    return timeFormat.format( new Date( stamp * 1000 ))
-  }
+    return timeFormat.format( new Date( stamp * 1000 ));
+  };
 
   const { name } = props.wData;
   return (

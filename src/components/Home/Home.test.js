@@ -9,11 +9,11 @@ describe( `Home component`, () => {
   const div = document.createElement( 'div' );
   const defaultProps = {
     match: { params: { list_id: 1 }}
-  }
+  };
   const cities = [
     { name: "San Francisco", list_id: 1 },
     { name: "Castro Valley", list_id: 2 }
-  ]
+  ];
 
   it( `renders the UI as expected`, () => {
     const tree = renderer
@@ -21,9 +21,9 @@ describe( `Home component`, () => {
         <BrowserRouter>
           <Home/>
         </BrowserRouter>)
-      .toJSON()
-    expect( tree ).toMatchSnapshot()
-  })
+      .toJSON();
+    expect( tree ).toMatchSnapshot();
+  });
 
   it( 'renders without errors', () => {
     ReactDOM.render( 
@@ -32,5 +32,5 @@ describe( `Home component`, () => {
       </BrowserRouter>
       , div );
     ReactDOM.unmountComponentAtNode( div );
-  })
-})
+  });
+});
