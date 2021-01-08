@@ -83,8 +83,8 @@ class ListPage extends Component {
     return (
       <div className="list">
         <AddCity />
+        <p>&#8678; Click a city to view Weather &#8680;</p>
         <div className="list-cities">
-          <p>&#8678; Click a city to view Weather &#8680;</p>
           <ul>
 
              {/* Maps filtered cities prop passed from Home -> Sidebar -> ListPage */}
@@ -105,7 +105,6 @@ class ListPage extends Component {
 
           {/*  This is Weather Display */}
           <div className="city-name">
-            
             {/* If isError is true then display nothing.  If false render CurrentWeather */}
             {
               this.state.isError === true

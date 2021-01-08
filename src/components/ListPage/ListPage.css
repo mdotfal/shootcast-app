@@ -5,12 +5,12 @@
 .list {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 12px;
-  max-width: 400px;
 }
 
 .list-cities {
   display: inline;
-  min-height: 500px;
+  height: 275px;
+  overflow: auto;
 }
 
 .list-cities ul {
@@ -19,7 +19,6 @@
   list-style-type: none;
   color:black;
   height: 55px;
-  width: 400px;
   overflow: auto;
 }
 
@@ -81,12 +80,7 @@ button {
 /* Miscellaneous */
 
 .list-forecast {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 130px;
+  margin: 10px 0;
 }
 
 .addcity-form {
@@ -102,10 +96,10 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: auto;
   margin-top: 20px;
   margin-left: 40px;
-  height: 400px;
 }
 
 .weather-display-items {
@@ -125,16 +119,11 @@ button {
     justify-content: center;
     align-items: center;
   }
-
-  .list-cities {
-    min-height: 150px;
-    margin-bottom: 50px;
-  }
   
   .list-cities ul {
     display: flex;
     flex-flow: row wrap;
-    width: 700px;
+    width: 800px;
     overflow: visible;
   }
 

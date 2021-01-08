@@ -104,7 +104,7 @@ exports[`Home component renders the UI as expected 1`] = `
                 <input
                   id="search"
                   name="search"
-                  placeholder="Enter City"
+                  placeholder="City or Zip Code"
                   required={true}
                   type="text"
                 />
