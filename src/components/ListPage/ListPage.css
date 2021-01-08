@@ -80,7 +80,7 @@ button {
 /* Miscellaneous */
 
 .list-forecast {
-  margin: 10px 0;
+  margin: 50px 0;
 }
 
 .addcity-form {
@@ -98,8 +98,7 @@ button {
   justify-content: center;
   align-items: center;
   overflow: auto;
-  margin-top: 20px;
-  margin-left: 40px;
+  margin: auto;
 }
 
 .weather-display-items {

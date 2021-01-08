@@ -13,24 +13,28 @@ class Landing extends Component {
     authedUser: false,
   }
   
+  // onUserChange sets username value
   onUserChange = e => {
     this.setState({
       username: e.target.value
     });
   }
 
+  // onPassChnage sets password value
   onPassChange = e => {
     this.setState({
       password: e.target.value
     });
   }
 
+  // onClick function for Guest Login button
   onClick = e => {
     this.setState({
       authedUser: true
     });
   }
 
+  // onSubmit function for Login Form
   onSubmit = e => {
     e.preventDefault();
     const result = this.props.handleLogin( this.state.username, this.state.password );

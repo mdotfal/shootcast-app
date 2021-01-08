@@ -9,12 +9,18 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .main-home {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+@media all and ( min-width: 600px ) {
+  .main-home {
+    justify-content: center;
+    align-items: center;
+  }
 }

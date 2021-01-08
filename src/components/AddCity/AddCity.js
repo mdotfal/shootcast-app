@@ -14,6 +14,7 @@ class AddCity extends Component {
 
   static contextType = AppContext;
 
+  // onSubmit function handles POST request for AddCity component
   onSubmit = e => {
     e.preventDefault();
     const newCity = {

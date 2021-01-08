@@ -16,6 +16,7 @@ class Item extends Component {
     isFocused: false,
   }
 
+  // onClick function to get city name for fetchWeather function
   onClick = () => {
     this.props.getNameOnClick( this.props.city.name );
   }
@@ -46,6 +47,7 @@ class Item extends Component {
     });
   }
 
+  // handleReset sets city back to empty string
   handleReset = () => {
     this.setState({
       city: ""

@@ -8,9 +8,8 @@ class AddList extends Component {
   static contextType = AppContext;
 
   addList = event => {
-  
+    
     const name = event.target.inputList.value;
-
     fetch( `${ config.API_ENDPOINT }/api/lists`, {
       method: 'POST',
       headers: {

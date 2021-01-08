@@ -8,6 +8,7 @@ import config from './config';
 import AppContext from './AppContext';
 import './App.css';
 
+//  demo users
 const users = [
   { 
     id: 1,
@@ -36,7 +37,7 @@ class App extends Component {
     const listsObj = `${ url }/api/lists`;
     const citiesObj = `${ url }/api/cities`;
 
-    // Fetch calls to shootcast-api
+    // GET calls to populate /api/lists & /api/cities
 
     Promise.all([
       fetch( listsObj ),
@@ -60,7 +61,7 @@ class App extends Component {
     .catch( err => err.message );
   }
 
-
+  // Handle Delete List function passing in listId 
   handleDeleteList = listId => {
     const newList = this.state.lists.filter( itm => itm.id !== listId );
     this.setState({
@@ -68,6 +69,7 @@ class App extends Component {
     })
   }
   
+  // Handle Add List function passing in listName
   handleAddList = ( listName ) => {
     this.setState({
       lists: [
@@ -77,6 +79,7 @@ class App extends Component {
     })
   }
   
+  // Handle Delete City function passing in cityId
   handleDeleteCity = cityId => {
     const newCities = this.state.cities.filter( itm => itm.id !== cityId );
     this.setState({
@@ -84,6 +87,7 @@ class App extends Component {
     })
   }
 
+  // Handle Add City function passing in city
   handleAddCity = ( city ) => {
     this.setState({
       cities: [
@@ -93,12 +97,14 @@ class App extends Component {
     })
   }
 
+  // Handle Guest Login setting authedUser: true to load /home without login
   handleGuestLogin = () => {
     this.setState({
       authedUser: true
     })
   }
 
+  // Handle Login function matches user and password and setting authedUser to true
   handleLogin = ( username, password ) => {
     const user = this.state.users.find( item => item.username.toLowerCase() === username.toLowerCase() );
     if( user && user.password === password ) {
@@ -110,12 +116,14 @@ class App extends Component {
     return false;
   }
 
+  // Handle Signout function sets authedUser to false
   handleSignOut = () => {
     this.setState({
       authedUser: false,
     })
   }
 
+  // Handle Registration function
   handleRegistration = ( username, password ) => {
     const exsitingUser = this.state.users.find( item => item.username.toLowerCase() === username.toLowerCase() );
     if( exsitingUser ) {
@@ -134,6 +142,7 @@ class App extends Component {
   render() {
     const { cities, lists, authedUser } = this.state;
 
+    // declaring context value object
     const value = {
       lists,
       cities,
@@ -146,6 +155,8 @@ class App extends Component {
     }
 
     return (
+
+      // AppContext wrapper passing value to Routes
       <AppContext.Provider value={ value }>
         <main className='App'>
           <div className="container">

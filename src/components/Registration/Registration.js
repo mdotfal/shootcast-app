@@ -12,18 +12,21 @@ class Registration extends Component {
     isSuccess: false
   }
 
+  // onUsernameChange sets username value
   onUsernameChange = e => {
     this.setState({
       username: e.target.value
     });
   }
 
+  // onPassWordChange sets password value
   onPasswordChange = e => {
     this.setState({
       password: e.target.value
     });
   }
 
+  // onRepeatPassWordChange sets repeat password value
   onRepeatPasswordChange = e => {
     this.setState({
       repeatPassword: e.target.value
