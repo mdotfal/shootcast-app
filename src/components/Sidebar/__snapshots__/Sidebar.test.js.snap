@@ -97,12 +97,12 @@ exports[`Sidebar component renders the UI as expected 1`] = `
         </fieldset>
       </form>
     </div>
+    <p>
+      ⇦ Click a city to view Weather ⇨
+    </p>
     <div
       className="list-cities"
     >
-      <p>
-        ⇦ Click a city to view Weather ⇨
-      </p>
       <ul>
         <li>
           <div
@@ -264,12 +264,12 @@ exports[`Sidebar component renders the UI with no cities 1`] = `
         </fieldset>
       </form>
     </div>
+    <p>
+      ⇦ Click a city to view Weather ⇨
+    </p>
     <div
       className="list-cities"
     >
-      <p>
-        ⇦ Click a city to view Weather ⇨
-      </p>
       <ul />
     </div>
     <div

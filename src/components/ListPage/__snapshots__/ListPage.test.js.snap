@@ -11,12 +11,12 @@ exports[`ListPage component renders with cities 1`] = `
       }
     }
   />
+  <p>
+    ⇦ Click a city to view Weather ⇨
+  </p>
   <div
     className="list-cities"
   >
-    <p>
-      ⇦ Click a city to view Weather ⇨
-    </p>
     <ul>
       <li
         key="0"
@@ -77,12 +77,12 @@ exports[`ListPage component renders without cities 1`] = `
       }
     }
   />
+  <p>
+    ⇦ Click a city to view Weather ⇨
+  </p>
   <div
     className="list-cities"
   >
-    <p>
-      ⇦ Click a city to view Weather ⇨
-    </p>
     <ul />
   </div>
   <div

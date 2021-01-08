@@ -118,6 +118,10 @@ button {
     justify-content: center;
     align-items: center;
   }
+
+  .list-cities {
+    min-height: 400px;
+  }
   
   .list-cities ul {
     display: flex;
