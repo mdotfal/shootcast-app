@@ -64,14 +64,11 @@ exports[`Landing Component should render 1`] = `
             Login
           </button>
           <a
+            className="button"
             href="/home"
             onClick={[Function]}
           >
-            <button
-              onClick={[Function]}
-            >
-              Guest Login
-            </button>
+            Guest Login
           </a>
         </div>
       </div>
@@ -80,12 +77,11 @@ exports[`Landing Component should render 1`] = `
   or
   <br />
   <a
+    className="button"
     href="/registration"
     onClick={[Function]}
   >
-    <button>
-      Register
-    </button>
+    Register
   </a>
 </div>
 `;
