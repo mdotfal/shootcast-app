@@ -9,16 +9,16 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* width: 100vw; */
 }
 
 .main-home {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
 }
 
+/* Media Query */
+
 @media all and ( min-width: 600px ) {
+  
   .main-home {
     justify-content: center;
     align-items: center;

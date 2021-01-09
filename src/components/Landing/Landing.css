@@ -1,7 +1,11 @@
+/* Body Styles */
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
   text-align: center;
 }
+
+/* Input / Button Styles */
 
 input[ type=text ],
 input[ type=password ],
@@ -39,16 +43,23 @@ input#password-repeat {
   border: none;
   border-bottom: 2px solid #5e351b;
 }
+
+/* Button Styles */
+
+.button,
 button,
 button[ type=submit ] {
   margin: 10px;
+  font-size: 14px;
   background-color: #F6EDE7;
   box-shadow: 0 1px 2px 0;
+  border-radius: 25px;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
 }
 
-button {
-  margin: 20px;
-}
+/* Landing Page Styles */
 
 .landing-page {
   display: flex;

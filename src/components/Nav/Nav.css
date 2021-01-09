@@ -46,6 +46,8 @@
   font-size: 14px;
 }
 
+/* Media Query */
+
 @media all and ( min-width: 600px ) {
   .nav {
     width: 100vw;

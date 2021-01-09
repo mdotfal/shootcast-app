@@ -1,10 +1,12 @@
+/* AddList Styles */
+
 .addlist-form {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-};
+}
 
 input {
-  height: 14px;;
+  height: 14px;
 }

@@ -11,6 +11,7 @@ class Sidebar extends Component {
 
   static contextType = AppContext;
 
+  // handleDelete handler
   handleDelete = ( listId ) => {
     fetch( `${ config.API_ENDPOINT }/api/lists/${ listId }`, {
       method: 'DELETE',
@@ -43,6 +44,8 @@ class Sidebar extends Component {
         <div className="sidebar-lists-map">
         <h2>Click to display list.</h2>
           <ul className="sidebar-ul">
+
+            {/* Maps lists array and sets a link to each lists route */}
             { this.context.lists.map( ( list, i ) => 
               <li key={ i }>
                 <NavLink to={ `/lists/${ list.id }` }> 

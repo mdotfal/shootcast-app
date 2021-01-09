@@ -77,8 +77,11 @@ class Landing extends Component {
                 <button 
                   type="submit"
                 >Login</button>
-                <Link to='/home'>
-                  <button onClick={ () => this.context.onGuestLogin() }>Guest Login</button>
+                <Link 
+                  to="/home"
+                  className="button"
+                  onClick={ () => this.context.onGuestLogin() }>
+                  Guest Login
                 </Link>
               </div>
             </div>
@@ -86,10 +89,11 @@ class Landing extends Component {
         </form>
         or
         <br />
-        <Link to="/registration">
-          <button>Register</button>
-        </Link>
-        
+          <Link 
+            to="/registration"
+            className="button">
+            Register
+          </Link>
       </div>
     );
   }

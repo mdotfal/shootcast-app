@@ -105,11 +105,17 @@ button {
   margin-left: 10px;
 }
 
+/* Media Query */
+
 @media all and ( min-width: 600px ) {
+
+  /* Sidebar Media Query */
 
   .sidebar-home {
     width: 800px;
   }
+
+  /* ListPage Media Query */
 
   .list {
     margin: auto;

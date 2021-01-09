@@ -33,14 +33,20 @@ class Registration extends Component {
     });
   }
 
+
+  // onSubmit
   onSubmit = e => {
     e.preventDefault();
+
+    // check to see if password value stored in state doesn't equal repeatPassword then display error.
     if( this.state.password !== this.state.repeatPassword ) {
       return this.setState({
         isError: "Passwords do not match!"
       });
     };
     const result =  this.props.handleRegistration( this.state.username, this.state.password);
+
+    // check to see if username is taken then display error else set isSuccess to true to validate and isError to false
     if( !result ) {
       return this.setState({
         isError: 'Username already taken!'
